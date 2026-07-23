@@ -36,6 +36,7 @@ content_margin_left = 32.0
 content_margin_top = 16.0
 content_margin_right = 32.0
 content_margin_bottom = 16.0
+bg_color = Color(0.4006977, 0.40069774, 0.40069756, 1)
 corner_radius_top_left = 8
 corner_radius_top_right = 8
 corner_radius_bottom_right = 8
@@ -51,6 +52,17 @@ corner_radius_top_right = 8
 corner_radius_bottom_right = 8
 corner_radius_bottom_left = 8
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_u656f"]
+content_margin_left = 16.0
+content_margin_top = 16.0
+content_margin_right = 16.0
+content_margin_bottom = 16.0
+bg_color = Color(0.446777, 0.44677705, 0.44677693, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+
 [resource]
 Button/font_sizes/font_size = 24
 Button/styles/disabled = SubResource("StyleBoxFlat_nva1m")
@@ -60,4 +72,6 @@ Button/styles/pressed = SubResource("StyleBoxFlat_2pkyf")
 HBoxContainer/constants/separation = 8
 Label/font_sizes/font_size = 24
 PanelContainer/styles/panel = SubResource("StyleBoxFlat_356b5")
+SecondaryPanelContainer/base_type = &"PanelContainer"
+SecondaryPanelContainer/styles/panel = SubResource("StyleBoxFlat_u656f")
 VBoxContainer/constants/separation = 8

@@ -2,6 +2,7 @@
 
 [ext_resource type="Theme" uid="uid://yrd8ppbd4ny7" path="res://resources/default_theme.tres" id="1_mu8pm"]
 [ext_resource type="Script" uid="uid://cbwt6whiu142j" path="res://ui/main_menu/main_menu.gd" id="1_uhj5c"]
+[ext_resource type="PackedScene" uid="uid://b2tlbjnvd3cqh" path="res://ui/main_menu/level_preview.tscn" id="3_omy8q"]
 
 [node name="MainMenu" type="Control" unique_id=2122167263]
 layout_mode = 3
@@ -73,7 +74,43 @@ fit_content = true
 layout_mode = 2
 text = "Return"
 
+[node name="LevelPreviews" type="PanelContainer" parent="." unique_id=247820322]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -88.0
+offset_top = -333.0
+offset_right = 88.0
+offset_bottom = 333.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="LevelPreviews" unique_id=825469784]
+layout_mode = 2
+
+[node name="ScrollContainer" type="ScrollContainer" parent="LevelPreviews/VBoxContainer" unique_id=267727091]
+custom_minimum_size = Vector2(0, 560)
+layout_mode = 2
+horizontal_scroll_mode = 0
+
+[node name="GridContainer" type="GridContainer" parent="LevelPreviews/VBoxContainer/ScrollContainer" unique_id=1300163815]
+layout_mode = 2
+columns = 2
+
+[node name="LevelPreview" parent="LevelPreviews/VBoxContainer/ScrollContainer/GridContainer" unique_id=200465318 instance=ExtResource("3_omy8q")]
+layout_mode = 2
+level_scene_path = "uid://cr3gmadveww3p"
+
+[node name="ReturnButton" type="Button" parent="LevelPreviews/VBoxContainer" unique_id=1596949858]
+layout_mode = 2
+text = "Return"
+
 [connection signal="button_up" from="MainMenuButtons/PlayButton" to="." method="_on_start_game_button_button_up"]
 [connection signal="button_up" from="MainMenuButtons/CreditButton" to="." method="_on_credit_button_button_up"]
 [connection signal="button_up" from="MainMenuButtons/QuitButton" to="." method="_on_quit_button_button_up"]
 [connection signal="button_up" from="CreditContainer/VBoxContainer/ReturnButton" to="." method="_on_return_button_button_up"]
+[connection signal="button_up" from="LevelPreviews/VBoxContainer/ReturnButton" to="." method="_on_return_button_button_up"]

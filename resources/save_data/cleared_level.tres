@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="SaveData" format=3 uid="uid://bw60dleea84y6"]
+
+[ext_resource type="Script" uid="uid://ncd1df27tvdv" path="res://common/scripts/save_data.gd" id="1_ddsa3"]
+
+[resource]
+script = ExtResource("1_ddsa3")
+name = "cleared_level"
+data = Dictionary[String, Variant]({
+"level_1": false,
+"level_2": false
+})
+metadata/_custom_type_script = "uid://ncd1df27tvdv"

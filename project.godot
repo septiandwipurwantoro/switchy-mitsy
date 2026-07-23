@@ -25,6 +25,7 @@ AudioManager="*uid://db4ssh5pxif28"
 SceneManager="*uid://jov1uiv472em"
 UIManager="*uid://qnxjdomdroiw"
 SaveManager="*uid://dnaj5sdm5qsoh"
+GameState="*uid://cx0oqc1xyoorx"
 
 [display]
 
@@ -33,10 +34,15 @@ window/size/viewport_height=720
 window/stretch/mode="canvas_items"
 window/stretch/aspect="expand"
 
+[gui]
+
+theme/custom="uid://yrd8ppbd4ny7"
+
 [physics]
 
 3d/physics_engine="Jolt Physics"
 
 [rendering]
 
+textures/canvas_textures/default_texture_filter=0
 rendering_device/driver.windows="d3d12"
