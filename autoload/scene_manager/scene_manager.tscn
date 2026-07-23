@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://jov1uiv472em"]
+
+[ext_resource type="Script" uid="uid://b4xvcvioecuo" path="res://autoload/scene_manager/scene_manager.gd" id="1_083xy"]
+
+[node name="SceneManager" type="Node2D" unique_id=1917280296]
+process_mode = 3
+script = ExtResource("1_083xy")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1046494413]
+layer = 100
+
+[node name="Overlay" type="ColorRect" parent="CanvasLayer" unique_id=881782347]
+visible = false
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0)

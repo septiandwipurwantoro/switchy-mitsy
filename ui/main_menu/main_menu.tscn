@@ -1,0 +1,79 @@
+[gd_scene format=3 uid="uid://cyukwkdl3cngs"]
+
+[ext_resource type="Theme" uid="uid://yrd8ppbd4ny7" path="res://resources/default_theme.tres" id="1_mu8pm"]
+[ext_resource type="Script" uid="uid://cbwt6whiu142j" path="res://ui/main_menu/main_menu.gd" id="1_uhj5c"]
+
+[node name="MainMenu" type="Control" unique_id=2122167263]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme = ExtResource("1_mu8pm")
+script = ExtResource("1_uhj5c")
+
+[node name="MainMenuButtons" type="VBoxContainer" parent="." unique_id=1447961476]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -48.0
+offset_top = -33.0
+offset_right = 48.0
+offset_bottom = 33.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="PlayButton" type="Button" parent="MainMenuButtons" unique_id=1219116735]
+layout_mode = 2
+text = "Play"
+
+[node name="CreditButton" type="Button" parent="MainMenuButtons" unique_id=1245511585]
+layout_mode = 2
+text = "Credit"
+
+[node name="QuitButton" type="Button" parent="MainMenuButtons" unique_id=840340057]
+layout_mode = 2
+text = "Quit"
+
+[node name="CreditContainer" type="PanelContainer" parent="." unique_id=774155455]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -88.0
+offset_top = -85.5
+offset_right = 88.0
+offset_bottom = 85.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CreditContainer" unique_id=523781076]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="CreditContainer/VBoxContainer" unique_id=1277119985]
+layout_mode = 2
+text = "Credit"
+horizontal_alignment = 1
+
+[node name="RichTextLabel" type="RichTextLabel" parent="CreditContainer/VBoxContainer" unique_id=538889070]
+custom_minimum_size = Vector2(560, 480)
+layout_mode = 2
+text = "Credit here"
+fit_content = true
+
+[node name="ReturnButton" type="Button" parent="CreditContainer/VBoxContainer" unique_id=427719860]
+layout_mode = 2
+text = "Return"
+
+[connection signal="button_up" from="MainMenuButtons/PlayButton" to="." method="_on_start_game_button_button_up"]
+[connection signal="button_up" from="MainMenuButtons/CreditButton" to="." method="_on_credit_button_button_up"]
+[connection signal="button_up" from="MainMenuButtons/QuitButton" to="." method="_on_quit_button_button_up"]
+[connection signal="button_up" from="CreditContainer/VBoxContainer/ReturnButton" to="." method="_on_return_button_button_up"]

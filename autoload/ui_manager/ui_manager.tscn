@@ -1,0 +1,44 @@
+[gd_scene format=3 uid="uid://qnxjdomdroiw"]
+
+[ext_resource type="Script" uid="uid://cq3jd4lc01xv5" path="res://autoload/ui_manager/ui_manager.gd" id="1_1m8t4"]
+
+[node name="UIManager" type="CanvasLayer" unique_id=1403145187]
+script = ExtResource("1_1m8t4")
+
+[node name="ConfirmationPanel" type="PanelContainer" parent="." unique_id=1775453400]
+unique_name_in_owner = true
+visible = false
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="ConfirmationPanel" unique_id=1882751545]
+layout_mode = 2
+
+[node name="ConfimationLabel" type="Label" parent="ConfirmationPanel/VBoxContainer" unique_id=637864554]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Message"
+horizontal_alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="ConfirmationPanel/VBoxContainer" unique_id=181592373]
+layout_mode = 2
+
+[node name="CancelButton" type="Button" parent="ConfirmationPanel/VBoxContainer/HBoxContainer" unique_id=1641752424]
+layout_mode = 2
+text = "Cancel"
+
+[node name="ConfirmButton" type="Button" parent="ConfirmationPanel/VBoxContainer/HBoxContainer" unique_id=585985944]
+layout_mode = 2
+text = "Confirm"
+
+[connection signal="button_up" from="ConfirmationPanel/VBoxContainer/HBoxContainer/CancelButton" to="." method="_on_cancel_button_button_up"]
+[connection signal="button_up" from="ConfirmationPanel/VBoxContainer/HBoxContainer/ConfirmButton" to="." method="_on_confirm_button_button_up"]

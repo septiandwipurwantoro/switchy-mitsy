@@ -1,0 +1,65 @@
+[gd_scene format=3 uid="uid://icugwkqmdsd7"]
+
+[ext_resource type="Theme" uid="uid://yrd8ppbd4ny7" path="res://resources/default_theme.tres" id="1_cumrq"]
+[ext_resource type="Script" uid="uid://bypb74g84ospt" path="res://ui/GUI/gui.gd" id="1_s27c0"]
+
+[node name="GUI" type="Control" unique_id=1538357538]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme = ExtResource("1_cumrq")
+script = ExtResource("1_s27c0")
+
+[node name="PauseButton" type="Button" parent="." unique_id=1174247197]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -197.0
+offset_top = 64.0
+offset_right = -64.0
+offset_bottom = 130.0
+grow_horizontal = 0
+text = "Pause"
+
+[node name="PauseContainer" type="PanelContainer" parent="." unique_id=145972258]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -16.0
+offset_top = -16.0
+offset_right = 16.0
+offset_bottom = 16.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PauseContainer" unique_id=1512555494]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="PauseContainer/VBoxContainer" unique_id=1523576342]
+layout_mode = 2
+text = "Game Paused"
+horizontal_alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="PauseContainer/VBoxContainer" unique_id=2053693866]
+layout_mode = 2
+
+[node name="ReturnButton" type="Button" parent="PauseContainer/VBoxContainer/HBoxContainer" unique_id=549118553]
+layout_mode = 2
+text = "Return"
+
+[node name="MainMenuButton" type="Button" parent="PauseContainer/VBoxContainer/HBoxContainer" unique_id=1834042359]
+layout_mode = 2
+text = "Main Menu"
+
+[connection signal="button_up" from="PauseButton" to="." method="_on_pause_button_button_up"]
+[connection signal="button_up" from="PauseContainer/VBoxContainer/HBoxContainer/ReturnButton" to="." method="_on_return_button_button_up"]
+[connection signal="button_up" from="PauseContainer/VBoxContainer/HBoxContainer/MainMenuButton" to="." method="_on_main_menu_button_button_up"]
