@@ -1,12 +1,12 @@
 [gd_scene format=3 uid="uid://cr3gmadveww3p"]
 
-[ext_resource type="Script" uid="uid://bhf4jemvwvwd5" path="res://levels/level_1/level_1.gd" id="1_k1ttk"]
+[ext_resource type="Script" uid="uid://78yrqjk8sox7" path="res://common/scripts/level.gd" id="1_iey7c"]
 [ext_resource type="PackedScene" uid="uid://4a1t6ljv7krs" path="res://entities/platform/platform.tscn" id="2_45440"]
 [ext_resource type="PackedScene" uid="uid://d0gbd5rmcbq1o" path="res://entities/player/player.tscn" id="3_epb64"]
 [ext_resource type="PackedScene" uid="uid://icugwkqmdsd7" path="res://ui/GUI/gui.tscn" id="4_iey7c"]
 
 [node name="Level1" type="Node2D" unique_id=2016547381]
-script = ExtResource("1_k1ttk")
+script = ExtResource("1_iey7c")
 
 [node name="Platforms" type="Node2D" parent="." unique_id=923400506]
 
@@ -24,8 +24,13 @@ position = Vector2(1135, 476)
 platform_index = 2
 size = Vector2(480, 48)
 
+[node name="Platform4" parent="Platforms" unique_id=1182655265 instance=ExtResource("2_45440")]
+position = Vector2(641, 689)
+in_count_down = false
+size = Vector2(1280, 48)
+
 [node name="Player" parent="." unique_id=1361164556 instance=ExtResource("3_epb64")]
-position = Vector2(153, 350)
+position = Vector2(658, 564)
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=201091834]
 

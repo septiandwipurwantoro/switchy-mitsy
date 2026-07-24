@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://cti6gt5wyu5t4"]
+
+[ext_resource type="PackedScene" uid="uid://4a1t6ljv7krs" path="res://entities/platform/platform.tscn" id="1_0srwa"]
+[ext_resource type="PackedScene" uid="uid://d0gbd5rmcbq1o" path="res://entities/player/player.tscn" id="2_v5uil"]
+[ext_resource type="PackedScene" uid="uid://icugwkqmdsd7" path="res://ui/GUI/gui.tscn" id="3_5722l"]
+
+[node name="Level2" type="Node2D" unique_id=1599192311]
+
+[node name="Platform" type="Node2D" parent="." unique_id=633887367]
+
+[node name="Platform" parent="Platform" unique_id=496977764 instance=ExtResource("1_0srwa")]
+position = Vector2(638, 635)
+in_count_down = false
+size = Vector2(1280, 48)
+
+[node name="Player" parent="." unique_id=1361164556 instance=ExtResource("2_v5uil")]
+position = Vector2(280, 522)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1907137711]
+
+[node name="GUI" parent="CanvasLayer" unique_id=1538357538 instance=ExtResource("3_5722l")]

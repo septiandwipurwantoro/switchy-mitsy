@@ -16,7 +16,7 @@ func _process(delta: float) -> void:
 	if not count_down_enabled: return
 	
 	count_down -= delta
-	if count_down <= 0:
+	if count_down <= 1:
 		count_down = next_count_down
 		next_count_down = randf_range(COUNT_DOWN_RANGE.x, COUNT_DOWN_RANGE.y)
 		count_down_over.emit()

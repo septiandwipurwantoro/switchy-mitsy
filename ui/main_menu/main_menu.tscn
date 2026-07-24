@@ -105,6 +105,10 @@ columns = 2
 layout_mode = 2
 level_scene_path = "uid://cr3gmadveww3p"
 
+[node name="LevelPreview2" parent="LevelPreviews/VBoxContainer/ScrollContainer/GridContainer" unique_id=625578325 instance=ExtResource("3_omy8q")]
+layout_mode = 2
+level_scene_path = "uid://cti6gt5wyu5t4"
+
 [node name="ReturnButton" type="Button" parent="LevelPreviews/VBoxContainer" unique_id=1596949858]
 layout_mode = 2
 text = "Return"
