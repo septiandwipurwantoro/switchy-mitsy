@@ -765,8 +765,17 @@ shape = SubResource("RectangleShape2D_356b5")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 offset = Vector2(0, -240)
+limit_top = -10
 limit_bottom = 1080
 position_smoothing_enabled = true
+position_smoothing_speed = 10.0
+drag_horizontal_enabled = true
+drag_vertical_enabled = true
+drag_top_margin = 0.7
+drag_right_margin = 0.01
+drag_bottom_margin = 0.0
+editor_draw_limits = true
+editor_draw_drag_margin = true
 
 [node name="PlayerSprites" type="Node2D" parent="."]
 position = Vector2(0, 17)
@@ -799,3 +808,4 @@ offset = Vector2(0, -11.495)
 libraries = {
 &"": SubResource("AnimationLibrary_26q78")
 }
+playback_default_blend_time = 0.1
