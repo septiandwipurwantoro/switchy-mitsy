@@ -45,6 +45,10 @@ func _physics_process(delta: float) -> void:
 	_handle_wall_jump()
 	move_and_slide()
 
+func get_hit() -> void:
+	input_disabled = true
+	animation_player.play("jump")
+	velocity.y = JUMP_VELOCITY
 
 func _update_wall_slide_state(delta: float) -> void:
 	if is_on_wall() and not is_on_floor() and velocity.y >= 0.0:
@@ -85,6 +89,7 @@ func _handle_jump() -> void:
 		is_jumping = false
 		jumps_used = 0
 	
+	if input_disabled: return
 	if Input.is_action_just_pressed("jump"):
 		if not is_wall_sliding:
 			animation_player.play("jump")
@@ -102,6 +107,7 @@ func _handle_wall_jump() -> void:
 		return
 	
 	if jumps_used < MAX_JUMPS:
+		if input_disabled: return
 		if Input.is_action_just_pressed("move_left"):
 			velocity.x = -WALL_JUMP_PUSH
 			velocity.y = WALL_JUMP_UP
@@ -122,6 +128,7 @@ func _reset_after_wall_jump() -> void:
 	is_wall_sliding = false
 
 func _handle_movement(delta) -> void:
+	if input_disabled: return
 	var direction := Input.get_axis("move_left", "move_right")
 	velocity.x = lerp(velocity.x, direction * SPEED, FRICTION * delta)
 	if not is_jumping and not is_wall_sliding:

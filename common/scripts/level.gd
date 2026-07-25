@@ -5,7 +5,9 @@ class_name Level
 
 @onready var platforms: Node2D = $Platforms
 @onready var gui: GUI = $CanvasLayer/GUI
+@onready var player: Player = $Player
 @onready var main_menu_scene := "res://ui/main_menu/main_menu.tscn"
+
 
 var appeared_count := 0
 
@@ -17,7 +19,7 @@ func _ready() -> void:
 	_on_count_down_over()
 	
 	for platform in platforms.get_children():
-		if platform is SpikedPlatform:
+		if platform is Spike:
 			platform.player_hit.connect(_on_player_hit)
 
 func _on_count_down_over() -> void:
@@ -30,7 +32,12 @@ func _on_count_down_over() -> void:
 	appeared_count += 1
 
 func _on_player_hit() -> void:
-	print("player got hit")
+	GameState.count_down_enabled = false
+	for platform in platforms.get_children():
+		if platform is Platform:
+			platform.disable.call_deferred()
+			
+	player.get_hit()
 
 func _on_dead_area_body_entered(body: Node2D) -> void:
 	if body is Player:

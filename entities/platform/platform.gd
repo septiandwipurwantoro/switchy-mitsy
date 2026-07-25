@@ -36,6 +36,9 @@ const COLOR_TIMER := [5.0,4.0,3.0,6.0,5.0,4.0]
 func _ready():
 	_update_visual()
 
+func disable() -> void:
+	collision_shape_2d.disabled = true
+
 func _update_visual():
 	if !is_node_ready():
 		return
