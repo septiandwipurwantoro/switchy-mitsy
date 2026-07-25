@@ -34,8 +34,9 @@ func _on_player_hit() -> void:
 
 func _on_dead_area_body_entered(body: Node2D) -> void:
 	if body is Player:
-		if is_game_cleared: return
 		get_tree().paused = true
+		
+		if is_game_cleared: return
 		gui.show_game_over_panel()
 
 func _on_finish_area_body_entered(body: Node2D) -> void:

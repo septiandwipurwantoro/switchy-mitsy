@@ -1,67 +1,109 @@
-[gd_scene load_steps=8 format=3 uid="uid://cr3gmadveww3p"]
+[gd_scene load_steps=8 format=3 uid="uid://csd58qvpu4jdk"]
 
 [ext_resource type="Script" uid="uid://78yrqjk8sox7" path="res://common/scripts/level.gd" id="1_iey7c"]
 [ext_resource type="PackedScene" uid="uid://4a1t6ljv7krs" path="res://entities/platform/platform.tscn" id="2_45440"]
+[ext_resource type="Theme" uid="uid://yrd8ppbd4ny7" path="res://resources/default_theme.tres" id="2_n46q3"]
 [ext_resource type="PackedScene" uid="uid://d0gbd5rmcbq1o" path="res://entities/player/player.tscn" id="3_epb64"]
-[ext_resource type="PackedScene" uid="uid://cgpjjlx3d27v1" path="res://entities/spiked_platform/spiked_platform.tscn" id="3_n46q3"]
 [ext_resource type="PackedScene" uid="uid://icugwkqmdsd7" path="res://ui/GUI/gui.tscn" id="4_iey7c"]
 
-[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_356b5"]
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_yiid0"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_356b5"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4e0le"]
 size = Vector2(480, 88)
 
-[node name="Level1" type="Node2D"]
+[node name="Level_1_gm" type="Node2D"]
 script = ExtResource("1_iey7c")
+
+[node name="Tutorial_1" type="RichTextLabel" parent="."]
+offset_left = 120.0
+offset_top = 343.0
+offset_right = 623.0
+offset_bottom = 525.0
+theme = ExtResource("2_n46q3")
+theme_override_font_sizes/normal_font_size = 23
+bbcode_enabled = true
+text = "[wave amp=9.0 freq=2]Hey there! Welcome to the tutorial,
+Use arrow keys or WASD to move!
+
+And, use spacebar or 
+up arrow key to jump![/wave]"
+scroll_active = false
+horizontal_alignment = 1
+custom_effects = [null]
+
+[node name="Tutorial_2" type="RichTextLabel" parent="."]
+offset_left = 870.0
+offset_top = 337.0
+offset_right = 1323.0
+offset_bottom = 593.0
+theme = ExtResource("2_n46q3")
+theme_override_font_sizes/normal_font_size = 23
+bbcode_enabled = true
+text = "[wave amp=9.0 freq=2]Remember, the timer countdown's colour is representing the platform's color.
+
+So be quick when the countdown is still the same as the platform you're on![/wave]"
+scroll_active = false
+autowrap_mode = 2
+horizontal_alignment = 1
+
+[node name="Player" parent="." instance=ExtResource("3_epb64")]
+position = Vector2(96, 620)
 
 [node name="Platforms" type="Node2D" parent="."]
 
 [node name="Platform" parent="Platforms" instance=ExtResource("2_45440")]
-position = Vector2(136, 686)
-size = Vector2(555, 48)
+position = Vector2(256, 704)
+size = Vector2(400, 48)
 
 [node name="Platform2" parent="Platforms" instance=ExtResource("2_45440")]
-position = Vector2(651, 686)
-platform_index = 1
-size = Vector2(480, 48)
+position = Vector2(544, 640)
+size = Vector2(170, 200)
 
 [node name="Platform3" parent="Platforms" instance=ExtResource("2_45440")]
-position = Vector2(1135, 686)
-platform_index = 2
-size = Vector2(480, 48)
-
-[node name="Platform6" parent="Platforms" instance=ExtResource("2_45440")]
-position = Vector2(2097, 686)
-in_count_down = false
-size = Vector2(480, 48)
+position = Vector2(736, 640)
+platform_index = 1
+size = Vector2(200, 200)
 
 [node name="Platform4" parent="Platforms" instance=ExtResource("2_45440")]
-position = Vector2(331, 422)
-size = Vector2(48, 480)
+position = Vector2(944, 688)
+platform_index = 1
+size = Vector2(200, 100)
 
 [node name="Platform5" parent="Platforms" instance=ExtResource("2_45440")]
-position = Vector2(1398, 417)
+position = Vector2(1149, 697)
 platform_index = 2
-size = Vector2(48, 480)
+size = Vector2(200, 50)
 
-[node name="SpikedPlatform" parent="Platforms" instance=ExtResource("3_n46q3")]
-position = Vector2(904, 530)
-size = Vector2(560, 48)
+[node name="Platform6" parent="Platforms" instance=ExtResource("2_45440")]
+position = Vector2(1575, 697)
+platform_index = 2
+size = Vector2(300, 50)
 
-[node name="Player" parent="." instance=ExtResource("3_epb64")]
-position = Vector2(24, 582)
+[node name="Platform8" parent="Platforms" instance=ExtResource("2_45440")]
+position = Vector2(1803, 686)
+platform_index = 2
+size = Vector2(150, 100)
+
+[node name="Platform7" parent="Platforms" instance=ExtResource("2_45440")]
+position = Vector2(2132, 667)
+in_count_down = false
+size = Vector2(500, 50)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="GUI" parent="CanvasLayer" instance=ExtResource("4_iey7c")]
 
 [node name="DeadArea" type="Area2D" parent="."]
-position = Vector2(0, 1280)
+position = Vector2(0, 893)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="DeadArea"]
-shape = SubResource("WorldBoundaryShape2D_356b5")
+shape = SubResource("WorldBoundaryShape2D_yiid0")
 
 [node name="FinishArea" type="Area2D" parent="."]
-position = Vector2(2097, 666)
+position = Vector2(2134, 654)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="FinishArea"]
-shape = SubResource("RectangleShape2D_356b5")
+shape = SubResource("RectangleShape2D_4e0le")
 
 [node name="ColorRect" type="ColorRect" parent="FinishArea"]
 anchors_preset = 7
@@ -75,10 +117,6 @@ offset_right = 5.0
 grow_horizontal = 2
 grow_vertical = 0
 color = Color(1, 0.423529, 0.258824, 1)
-
-[node name="CanvasLayer" type="CanvasLayer" parent="."]
-
-[node name="GUI" parent="CanvasLayer" instance=ExtResource("4_iey7c")]
 
 [connection signal="body_entered" from="DeadArea" to="." method="_on_dead_area_body_entered"]
 [connection signal="body_entered" from="FinishArea" to="." method="_on_finish_area_body_entered"]
