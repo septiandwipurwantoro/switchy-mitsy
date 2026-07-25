@@ -7,7 +7,6 @@ extends Control
 const QUIT_ACTION_NAME := "quit"
 
 func _ready() -> void:
-	SaveManager.load_game()
 	UIManager.action_confirmed.connect(_on_action_confirmed)
 
 func _on_start_game_button_button_up() -> void:

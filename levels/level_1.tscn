@@ -7,8 +7,12 @@
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_356b5"]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_356b5"]
+size = Vector2(480, 88)
+
 [node name="Level1" type="Node2D" unique_id=2016547381]
 script = ExtResource("1_iey7c")
+level_name = "level_1"
 
 [node name="Platforms" type="Node2D" parent="." unique_id=923400506]
 
@@ -26,9 +30,18 @@ position = Vector2(1135, 686)
 platform_index = 2
 size = Vector2(480, 48)
 
+[node name="Platform6" parent="Platforms" unique_id=805649153 instance=ExtResource("2_45440")]
+position = Vector2(2097, 686)
+in_count_down = false
+platform_index = 2
+size = Vector2(480, 48)
+
 [node name="Platform4" parent="Platforms" unique_id=402022965 instance=ExtResource("2_45440")]
 position = Vector2(401, 417)
-in_count_down = false
+size = Vector2(48, 480)
+
+[node name="Platform5" parent="Platforms" unique_id=539842410 instance=ExtResource("2_45440")]
+position = Vector2(1398, 417)
 platform_index = 2
 size = Vector2(48, 480)
 
@@ -41,8 +54,28 @@ position = Vector2(0, 1280)
 [node name="CollisionShape2D" type="CollisionShape2D" parent="DeadArea" unique_id=1552985426]
 shape = SubResource("WorldBoundaryShape2D_356b5")
 
+[node name="FinishArea" type="Area2D" parent="." unique_id=1178177878]
+position = Vector2(2097, 666)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="FinishArea" unique_id=2047138418]
+shape = SubResource("RectangleShape2D_356b5")
+
+[node name="ColorRect" type="ColorRect" parent="FinishArea" unique_id=565725448]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -5.0
+offset_top = -240.0
+offset_right = 5.0
+grow_horizontal = 2
+grow_vertical = 0
+color = Color(1, 0.42352942, 0.25882354, 1)
+
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=201091834]
 
 [node name="GUI" parent="CanvasLayer" unique_id=1538357538 instance=ExtResource("4_iey7c")]
 
 [connection signal="body_entered" from="DeadArea" to="." method="_on_dead_area_body_entered"]
+[connection signal="body_entered" from="FinishArea" to="." method="_on_finish_area_body_entered"]

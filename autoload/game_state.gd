@@ -1,7 +1,6 @@
 extends Node
 
 signal count_down_over
-signal game_over
 
 const COUNT_DOWN_RANGE := Vector2(5.0, 10.0)
 

@@ -1,6 +1,7 @@
 extends Node2D
 class_name Level
 
+@export var level_name: String
 @export var platform_group_total := 3
 
 @onready var platforms: Node2D = $Platforms
@@ -8,6 +9,8 @@ class_name Level
 @onready var main_menu_scene := "res://ui/main_menu/main_menu.tscn"
 
 var appeared_count := 0
+
+var is_game_cleared := false
 
 func _ready() -> void: 
 	GameState.start_count_down()
@@ -24,5 +27,16 @@ func _on_count_down_over() -> void:
 
 func _on_dead_area_body_entered(body: Node2D) -> void:
 	if body is Player:
+		if is_game_cleared: return
 		get_tree().paused = true
-		GameState.game_over.emit()
+		gui.show_game_over_panel()
+
+func _on_finish_area_body_entered(body: Node2D) -> void:
+	if body is Player:
+		is_game_cleared = true
+		
+		var save_data: SaveData = SaveManager.get_save_data("cleared_level")
+		save_data.set_data(level_name, true)
+		SaveManager.save_game()
+		
+		gui.show_level_cleared_panel()

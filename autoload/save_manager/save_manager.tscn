@@ -1,6 +1,9 @@
 [gd_scene format=3 uid="uid://dnaj5sdm5qsoh"]
 
 [ext_resource type="Script" uid="uid://dhnt8ls4l04x0" path="res://autoload/save_manager/save_manager.gd" id="1_k2rn1"]
+[ext_resource type="Script" uid="uid://ncd1df27tvdv" path="res://common/scripts/save_data.gd" id="2_ddf2g"]
+[ext_resource type="Resource" uid="uid://bw60dleea84y6" path="res://resources/save_data/cleared_level.tres" id="3_brgvd"]
 
 [node name="SaveManager" type="Node" unique_id=1606899345]
 script = ExtResource("1_k2rn1")
+data_list = Array[ExtResource("2_ddf2g")]([ExtResource("3_brgvd")])

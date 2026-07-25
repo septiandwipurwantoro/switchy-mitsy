@@ -4,6 +4,11 @@ const SAVE_PATH := "user://savegame.data"
 
 @export var data_list: Array[SaveData]
 
+func _ready() -> void:
+	_load_game()
+	var cleared_data: SaveData = get_save_data("cleared_level")
+	print(cleared_data.data)
+
 func save_game() -> void:
 	var context: Dictionary[String, Dictionary] = {}
 	for save_data in data_list:
@@ -17,7 +22,7 @@ func save_game() -> void:
 	file.store_var(context)
 	file.close()
 
-func load_game() -> void:
+func _load_game() -> void:
 	if not FileAccess.file_exists(SAVE_PATH): return
 
 	var file = FileAccess.open(SAVE_PATH, FileAccess.READ)
