@@ -1,10 +1,10 @@
-[gd_scene format=3 uid="uid://cyukwkdl3cngs"]
+[gd_scene load_steps=4 format=3 uid="uid://cyukwkdl3cngs"]
 
 [ext_resource type="Theme" uid="uid://yrd8ppbd4ny7" path="res://resources/default_theme.tres" id="1_mu8pm"]
 [ext_resource type="Script" uid="uid://cbwt6whiu142j" path="res://ui/main_menu/main_menu.gd" id="1_uhj5c"]
 [ext_resource type="PackedScene" uid="uid://b2tlbjnvd3cqh" path="res://ui/main_menu/level_preview.tscn" id="3_omy8q"]
 
-[node name="MainMenu" type="Control" unique_id=2122167263]
+[node name="MainMenu" type="Control"]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -15,7 +15,7 @@ mouse_filter = 2
 theme = ExtResource("1_mu8pm")
 script = ExtResource("1_uhj5c")
 
-[node name="MainMenuButtons" type="VBoxContainer" parent="." unique_id=1447961476]
+[node name="MainMenuButtons" type="VBoxContainer" parent="."]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -29,19 +29,19 @@ offset_bottom = 33.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="PlayButton" type="Button" parent="MainMenuButtons" unique_id=1219116735]
+[node name="PlayButton" type="Button" parent="MainMenuButtons"]
 layout_mode = 2
 text = "Play"
 
-[node name="CreditButton" type="Button" parent="MainMenuButtons" unique_id=1245511585]
+[node name="CreditButton" type="Button" parent="MainMenuButtons"]
 layout_mode = 2
 text = "Credit"
 
-[node name="QuitButton" type="Button" parent="MainMenuButtons" unique_id=840340057]
+[node name="QuitButton" type="Button" parent="MainMenuButtons"]
 layout_mode = 2
 text = "Quit"
 
-[node name="CreditContainer" type="PanelContainer" parent="." unique_id=774155455]
+[node name="CreditContainer" type="PanelContainer" parent="."]
 visible = false
 layout_mode = 1
 anchors_preset = 8
@@ -56,25 +56,25 @@ offset_bottom = 85.5
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="VBoxContainer" type="VBoxContainer" parent="CreditContainer" unique_id=523781076]
+[node name="VBoxContainer" type="VBoxContainer" parent="CreditContainer"]
 layout_mode = 2
 
-[node name="Label" type="Label" parent="CreditContainer/VBoxContainer" unique_id=1277119985]
+[node name="Label" type="Label" parent="CreditContainer/VBoxContainer"]
 layout_mode = 2
 text = "Credit"
 horizontal_alignment = 1
 
-[node name="RichTextLabel" type="RichTextLabel" parent="CreditContainer/VBoxContainer" unique_id=538889070]
+[node name="RichTextLabel" type="RichTextLabel" parent="CreditContainer/VBoxContainer"]
 custom_minimum_size = Vector2(560, 480)
 layout_mode = 2
 text = "Credit here"
 fit_content = true
 
-[node name="ReturnButton" type="Button" parent="CreditContainer/VBoxContainer" unique_id=427719860]
+[node name="ReturnButton" type="Button" parent="CreditContainer/VBoxContainer"]
 layout_mode = 2
 text = "Return"
 
-[node name="LevelPreviews" type="PanelContainer" parent="." unique_id=247820322]
+[node name="LevelPreviews" type="PanelContainer" parent="."]
 visible = false
 layout_mode = 1
 anchors_preset = 8
@@ -89,27 +89,27 @@ offset_bottom = 333.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="VBoxContainer" type="VBoxContainer" parent="LevelPreviews" unique_id=825469784]
+[node name="VBoxContainer" type="VBoxContainer" parent="LevelPreviews"]
 layout_mode = 2
 
-[node name="ScrollContainer" type="ScrollContainer" parent="LevelPreviews/VBoxContainer" unique_id=267727091]
+[node name="ScrollContainer" type="ScrollContainer" parent="LevelPreviews/VBoxContainer"]
 custom_minimum_size = Vector2(0, 560)
 layout_mode = 2
 horizontal_scroll_mode = 0
 
-[node name="GridContainer" type="GridContainer" parent="LevelPreviews/VBoxContainer/ScrollContainer" unique_id=1300163815]
+[node name="GridContainer" type="GridContainer" parent="LevelPreviews/VBoxContainer/ScrollContainer"]
 layout_mode = 2
 columns = 2
 
-[node name="LevelPreview" parent="LevelPreviews/VBoxContainer/ScrollContainer/GridContainer" unique_id=200465318 instance=ExtResource("3_omy8q")]
+[node name="LevelPreview" parent="LevelPreviews/VBoxContainer/ScrollContainer/GridContainer" instance=ExtResource("3_omy8q")]
 layout_mode = 2
 level_scene_path = "uid://cr3gmadveww3p"
 
-[node name="LevelPreview2" parent="LevelPreviews/VBoxContainer/ScrollContainer/GridContainer" unique_id=625578325 instance=ExtResource("3_omy8q")]
+[node name="LevelPreview2" parent="LevelPreviews/VBoxContainer/ScrollContainer/GridContainer" instance=ExtResource("3_omy8q")]
 layout_mode = 2
 level_scene_path = "uid://cti6gt5wyu5t4"
 
-[node name="ReturnButton" type="Button" parent="LevelPreviews/VBoxContainer" unique_id=1596949858]
+[node name="ReturnButton" type="Button" parent="LevelPreviews/VBoxContainer"]
 layout_mode = 2
 text = "Return"
 
