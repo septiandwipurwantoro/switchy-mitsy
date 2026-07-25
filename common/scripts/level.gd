@@ -12,9 +12,13 @@ var appeared_count := 0
 var is_game_cleared := false
 
 func _ready() -> void: 
-	GameState.start_count_down()
+	GameState.start_count_down(platform_group_total)
 	GameState.count_down_over.connect(_on_count_down_over)
 	_on_count_down_over()
+	
+	for platform in platforms.get_children():
+		if platform is SpikedPlatform:
+			platform.player_hit.connect(_on_player_hit)
 
 func _on_count_down_over() -> void:
 	var appeared_turn := appeared_count % platform_group_total
@@ -22,7 +26,11 @@ func _on_count_down_over() -> void:
 		if platform is Platform:
 			platform.update_existence(appeared_turn, platform_group_total)
 			gui.update_count_down_color(appeared_turn, platform_group_total)
+			
 	appeared_count += 1
+
+func _on_player_hit() -> void:
+	print("player got hit")
 
 func _on_dead_area_body_entered(body: Node2D) -> void:
 	if body is Player:

@@ -31,6 +31,8 @@ const COLOR_CODE := [
 	Color.PURPLE
 ]
 
+const COLOR_TIMER := [5.0,4.0,3.0,6.0,5.0,4.0]
+
 func _ready():
 	_update_visual()
 
@@ -43,9 +45,7 @@ func _update_visual():
 	
 	platform_sprite.size = size
 	platform_sprite.position = -size / 2.0
-
-	if collision_shape_2d.shape is RectangleShape2D:
-		collision_shape_2d.shape.size = size
+	collision_shape_2d.shape.size = size
 
 func update_existence(appeared_turn: int, platform_group_total: int) -> void:
 	if not in_count_down: return

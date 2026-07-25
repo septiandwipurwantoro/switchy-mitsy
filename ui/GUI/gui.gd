@@ -14,7 +14,7 @@ func _ready() -> void:
 
 func _process(delta: float) -> void:
 	if GameState.count_down_enabled:
-		count_down_label.text = str(int(GameState.count_down))
+		count_down_label.text = str(int(GameState.count_down) + 1)
 
 func show_level_cleared_panel() -> void: level_cleared_panel.show()
 func show_game_over_panel() -> void: game_over_panel.show()

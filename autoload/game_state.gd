@@ -8,18 +8,26 @@ var next_count_down := 0.0
 var count_down := 0.0
 var count_down_enabled := false
 
+var count_down_total := 0
+var count_cycle_size := 0
+
 func _ready() -> void:
-	count_down = randf_range(COUNT_DOWN_RANGE.x, COUNT_DOWN_RANGE.y)
-	next_count_down = randf_range(COUNT_DOWN_RANGE.x, COUNT_DOWN_RANGE.y)
+	count_down = Platform.COLOR_TIMER[0]
+	next_count_down = Platform.COLOR_TIMER[1]
+	count_down_total += 2
 
 func _process(delta: float) -> void:
 	if not count_down_enabled: return
 	
 	count_down -= delta
-	if count_down <= 1:
+	if count_down <= 0:
 		count_down = next_count_down
-		next_count_down = randf_range(COUNT_DOWN_RANGE.x, COUNT_DOWN_RANGE.y)
+		next_count_down = Platform.COLOR_TIMER[count_down_total % count_cycle_size]
+		count_down_total += 1
 		count_down_over.emit()
 
-func start_count_down() -> void: count_down_enabled = true
+func start_count_down(cycle_size: int) -> void: 
+	count_cycle_size = cycle_size
+	count_down_enabled = true
+	
 func end_count_down() -> void: count_down_enabled = false
