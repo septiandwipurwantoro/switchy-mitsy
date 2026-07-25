@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://dleqcg6w6615a" path="res://entities/platform/platform.gd" id="1_wocd5"]
 [ext_resource type="Texture2D" uid="uid://ck2qj5pi5dwbe" path="res://assets/sprites/platform/platform_grid.png" id="2_8vvea"]
-[ext_resource type="Shader" path="res://resources/platform.gdshader" id="3_cxhri"]
+[ext_resource type="Shader" uid="uid://hcksq2xvbywy" path="res://resources/platform.gdshader" id="3_cxhri"]
 [ext_resource type="Texture2D" uid="uid://bxd4smashsepe" path="res://assets/sprites/platform/lines_for_grid.png" id="3_te5fq"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_356b5"]
