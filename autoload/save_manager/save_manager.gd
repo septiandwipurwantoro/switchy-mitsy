@@ -6,8 +6,6 @@ const SAVE_PATH := "user://savegame.data"
 
 func _ready() -> void:
 	_load_game()
-	var cleared_data: SaveData = get_save_data("cleared_level")
-	print(cleared_data.data)
 
 func save_game() -> void:
 	var context: Dictionary[String, Dictionary] = {}

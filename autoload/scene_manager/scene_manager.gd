@@ -1,7 +1,14 @@
 extends Node2D
 signal transition_finished
 
+
 @onready var overlay: ColorRect = $CanvasLayer/Overlay
+
+const  LEVELS: Array[String] = [
+	"res://levels/level_1.tscn",
+	"res://levels/level_2.tscn",
+	"res://levels/level_3.tscn"
+]
 
 const FADE_DURATION := 0.3
 
@@ -16,6 +23,20 @@ func reload_current_scene():
 	get_tree().reload_current_scene()
 	await _fade_out()
 	transition_finished.emit()
+
+func change_to_next_level(current_level: String) -> void:
+	var current_index := LEVELS.find(current_level)
+	if current_index == -1:
+		push_error("Level tidak ditemukan.")
+		return
+
+	var next_index := current_index + 1
+	if next_index >= LEVELS.size():
+		print("Sudah level terakhir.")
+		return
+
+	var next_level := LEVELS[next_index]
+	change_scene(next_level)
 
 func _fade_in() -> void:
 	overlay.show()

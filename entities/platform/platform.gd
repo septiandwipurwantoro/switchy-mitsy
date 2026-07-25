@@ -7,7 +7,6 @@ class_name Platform
 		in_count_down = value
 		_update_visual()
 
-
 @export var platform_index := 0:
 	set(value):
 		platform_index = value
@@ -19,7 +18,9 @@ class_name Platform
 		_update_visual()
 
 @onready var collision_shape_2d: CollisionShape2D = $CollisionShape2D
-@onready var color_rect: ColorRect = $ColorRect
+@onready var platform_sprite: NinePatchRect = $PlatformSprite
+@onready var platform_lines: TextureRect = $PlatformSprite/PlatformLines
+
 
 const COLOR_CODE := [
 	Color.RED,
@@ -37,11 +38,11 @@ func _update_visual():
 	if !is_node_ready():
 		return
 	
-	if in_count_down: color_rect.color = COLOR_CODE[platform_index]
-	else: color_rect.color = Color.WHITE
+	if in_count_down: platform_lines.modulate = COLOR_CODE[platform_index]
+	else: platform_lines.modulate = Color.WHITE
 	
-	color_rect.size = size
-	color_rect.position = -size / 2.0
+	platform_sprite.size = size
+	platform_sprite.position = -size / 2.0
 
 	if collision_shape_2d.shape is RectangleShape2D:
 		collision_shape_2d.shape.size = size
@@ -55,7 +56,7 @@ func update_existence(appeared_turn: int, platform_group_total: int) -> void:
 
 	if platform_group_total > 1:
 		var transparant := float(queue_distance) / float(platform_group_total - 1)
-		color_rect.color.a = lerp(1.0, 0.1, transparant)
-	else: color_rect.color.a = 1.0
+		platform_sprite.modulate.a = lerp(1.0, 0.1, transparant)
+	else: platform_sprite.modulate.a = 1.0
 
 	collision_shape_2d.disabled = queue_distance != 0

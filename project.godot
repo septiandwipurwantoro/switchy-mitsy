@@ -21,11 +21,11 @@ buses/default_bus_layout="uid://cpx8wl6jh0yo2"
 
 [autoload]
 
-AudioManager="*uid://db4ssh5pxif28"
-SceneManager="*uid://jov1uiv472em"
-UIManager="*uid://qnxjdomdroiw"
-SaveManager="*uid://dnaj5sdm5qsoh"
-GameState="*uid://cx0oqc1xyoorx"
+GameState="*res://autoload/game_state.gd"
+UIManager="*res://autoload/ui_manager/ui_manager.tscn"
+SceneManager="*res://autoload/scene_manager/scene_manager.tscn"
+SaveManager="*res://autoload/save_manager/save_manager.tscn"
+AudioManager="*res://autoload/audio_manager/audio_manager.tscn"
 
 [display]
 

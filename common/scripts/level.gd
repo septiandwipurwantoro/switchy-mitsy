@@ -1,7 +1,6 @@
 extends Node2D
 class_name Level
 
-@export var level_name: String
 @export var platform_group_total := 3
 
 @onready var platforms: Node2D = $Platforms
@@ -36,6 +35,7 @@ func _on_finish_area_body_entered(body: Node2D) -> void:
 		is_game_cleared = true
 		
 		var save_data: SaveData = SaveManager.get_save_data("cleared_level")
+		var level_name := get_tree().current_scene.scene_file_path
 		save_data.set_data(level_name, true)
 		SaveManager.save_game()
 		

@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=3 uid="uid://cr3gmadveww3p"]
+[gd_scene load_steps=7 format=3 uid="uid://cr3gmadveww3p"]
 
 [ext_resource type="Script" uid="uid://78yrqjk8sox7" path="res://common/scripts/level.gd" id="1_iey7c"]
 [ext_resource type="PackedScene" uid="uid://4a1t6ljv7krs" path="res://entities/platform/platform.tscn" id="2_45440"]
@@ -10,9 +10,8 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_356b5"]
 size = Vector2(480, 88)
 
-[node name="Level1" type="Node2D" unique_id=2016547381]
+[node name="Level1" type="Node2D"]
 script = ExtResource("1_iey7c")
-level_name = "level_1"
 
 [node name="Platforms" type="Node2D" parent="."]
 
@@ -30,17 +29,17 @@ position = Vector2(1135, 686)
 platform_index = 2
 size = Vector2(480, 48)
 
-[node name="Platform6" parent="Platforms" unique_id=805649153 instance=ExtResource("2_45440")]
+[node name="Platform6" parent="Platforms" instance=ExtResource("2_45440")]
 position = Vector2(2097, 686)
 in_count_down = false
 platform_index = 2
 size = Vector2(480, 48)
 
-[node name="Platform4" parent="Platforms" unique_id=402022965 instance=ExtResource("2_45440")]
+[node name="Platform4" parent="Platforms" instance=ExtResource("2_45440")]
 position = Vector2(401, 417)
 size = Vector2(48, 480)
 
-[node name="Platform5" parent="Platforms" unique_id=539842410 instance=ExtResource("2_45440")]
+[node name="Platform5" parent="Platforms" instance=ExtResource("2_45440")]
 position = Vector2(1398, 417)
 platform_index = 2
 size = Vector2(48, 480)
@@ -54,13 +53,13 @@ position = Vector2(0, 1280)
 [node name="CollisionShape2D" type="CollisionShape2D" parent="DeadArea"]
 shape = SubResource("WorldBoundaryShape2D_356b5")
 
-[node name="FinishArea" type="Area2D" parent="." unique_id=1178177878]
+[node name="FinishArea" type="Area2D" parent="."]
 position = Vector2(2097, 666)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="FinishArea" unique_id=2047138418]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="FinishArea"]
 shape = SubResource("RectangleShape2D_356b5")
 
-[node name="ColorRect" type="ColorRect" parent="FinishArea" unique_id=565725448]
+[node name="ColorRect" type="ColorRect" parent="FinishArea"]
 anchors_preset = 7
 anchor_left = 0.5
 anchor_top = 1.0
@@ -71,9 +70,9 @@ offset_top = -240.0
 offset_right = 5.0
 grow_horizontal = 2
 grow_vertical = 0
-color = Color(1, 0.42352942, 0.25882354, 1)
+color = Color(1, 0.423529, 0.258824, 1)
 
-[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=201091834]
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="GUI" parent="CanvasLayer" instance=ExtResource("4_iey7c")]
 

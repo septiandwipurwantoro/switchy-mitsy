@@ -1,7 +1,8 @@
 extends CharacterBody2D
 class_name Player
 
-@onready var animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
+@onready var player_sprites: Node2D = $PlayerSprites
+@onready var animation_player: AnimationPlayer = $AnimationPlayer
 
 const SPEED := 300.0
 const JUMP_VELOCITY := -400.0
@@ -15,6 +16,7 @@ const WALL_JUMP_UP := -400.0
 const WALL_JUMP_UP_ONLY := -450.0
 const FAST_FALL_SPEED := 600.0
 
+var is_jumping := false
 var is_wall_sliding := false
 var wall_slide_timer := 0.0
 var jumps_used := 0
@@ -30,6 +32,8 @@ func _physics_process(delta: float) -> void:
 func _update_wall_slide_state(delta: float) -> void:
 	if is_on_wall() and not is_on_floor() and velocity.y >= 0.0:
 		if not is_wall_sliding:
+			animation_player.play("wall")
+			is_jumping = false
 			is_wall_sliding = true
 			wall_slide_timer = WALL_SLIDE_DURATION
 			jumps_used = 0
@@ -50,9 +54,12 @@ func _apply_gravity(delta: float) -> void:
 
 func _handle_jump() -> void:
 	if is_on_floor():
+		is_jumping = false
 		jumps_used = 0
-
+	
 	if Input.is_action_just_pressed("jump"):
+		animation_player.play("jump")
+		is_jumping = true
 		if is_on_floor():
 			velocity.y = JUMP_VELOCITY
 			jumps_used = 1
@@ -80,15 +87,20 @@ func _handle_wall_jump() -> void:
 
 func _reset_after_wall_jump() -> void:
 	jumps_used += 1
+	animation_player.play("jump")
+	is_jumping = true
 	is_wall_sliding = false
 
 func _handle_movement() -> void:
 	var direction := Input.get_axis("move_left", "move_right")
 	velocity.x = direction * SPEED
+	
+	if not is_jumping and not is_wall_sliding:
+		if velocity.x == 0.0:
+			animation_player.play("idle")
+			return
 
-	if velocity.x == 0.0:
-		animated_sprite_2d.play("idle")
-		return
-
-	animated_sprite_2d.play("run")
-	animated_sprite_2d.flip_h = direction < 0
+		animation_player.play("run")
+		
+	for sprite in player_sprites.get_children():
+		if sprite is Sprite2D: sprite.flip_h = direction < 0
