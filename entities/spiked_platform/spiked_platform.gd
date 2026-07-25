@@ -1,18 +1,11 @@
 @tool
-extends StaticBody2D
+extends Platform
 class_name SpikedPlatform
 
 signal player_hit
 
-@onready var collision_shape_2d: CollisionShape2D = $CollisionShape2D
-@onready var platform_sprite: ColorRect = $PlatformSprite
 @onready var spike_collision: CollisionShape2D = $Spikes/SpikeArea/SpikeCollision
 @onready var spike_sprite: NinePatchRect = $Spikes/SpikeSprite
-
-@export var size := Vector2(48.0, 48.0):
-	set(value):
-		size = value
-		_update_visual()
 
 const SPIKE_WIDTH := Vector2(24, 24)
 

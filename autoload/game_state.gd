@@ -11,11 +11,6 @@ var count_down_enabled := false
 var count_down_total := 0
 var count_cycle_size := 0
 
-func _ready() -> void:
-	count_down = Platform.COLOR_TIMER[0]
-	next_count_down = Platform.COLOR_TIMER[1]
-	count_down_total += 2
-
 func _process(delta: float) -> void:
 	if not count_down_enabled: return
 	
@@ -27,6 +22,10 @@ func _process(delta: float) -> void:
 		count_down_over.emit()
 
 func start_count_down(cycle_size: int) -> void: 
+	count_down = Platform.COLOR_TIMER[0]
+	next_count_down = Platform.COLOR_TIMER[1]
+	count_down_total = 2
+	
 	count_cycle_size = cycle_size
 	count_down_enabled = true
 	
