@@ -38,8 +38,8 @@ func _update_visual():
 	if !is_node_ready():
 		return
 	
-	if in_count_down: platform_lines.modulate = COLOR_CODE[platform_index]
-	else: platform_lines.modulate = Color.WHITE
+	if in_count_down: platform_sprite.self_modulate = COLOR_CODE[platform_index]
+	else: platform_sprite.self_modulate = Color.WHITE
 	
 	platform_sprite.size = size
 	platform_sprite.position = -size / 2.0

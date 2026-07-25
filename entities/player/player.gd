@@ -5,6 +5,7 @@ class_name Player
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
 
 const SPEED := 300.0
+const FRICTION := 10.0
 const JUMP_VELOCITY := -400.0
 const MAX_JUMPS := 2
 
@@ -25,9 +26,10 @@ func _physics_process(delta: float) -> void:
 	_update_wall_slide_state(delta)
 	_apply_gravity(delta)
 	_handle_jump()
-	_handle_movement()
+	_handle_movement(delta)
 	_handle_wall_jump()
 	move_and_slide()
+
 
 func _update_wall_slide_state(delta: float) -> void:
 	if is_on_wall() and not is_on_floor() and velocity.y >= 0.0:
@@ -91,16 +93,11 @@ func _reset_after_wall_jump() -> void:
 	is_jumping = true
 	is_wall_sliding = false
 
-func _handle_movement() -> void:
+func _handle_movement(delta) -> void:
 	var direction := Input.get_axis("move_left", "move_right")
-	velocity.x = direction * SPEED
-	
+	velocity.x = lerp(velocity.x, direction * SPEED, FRICTION * delta)
 	if not is_jumping and not is_wall_sliding:
-		if velocity.x == 0.0:
+		if !direction:
 			animation_player.play("idle")
 			return
-
 		animation_player.play("run")
-		
-	for sprite in player_sprites.get_children():
-		if sprite is Sprite2D: sprite.flip_h = direction < 0
