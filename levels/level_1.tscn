@@ -50,7 +50,8 @@ axis_stretch_horizontal = 1
 axis_stretch_vertical = 1
 
 [node name="NinePatchRect6" type="NinePatchRect" parent="Platform_wood"]
-modulate = Color(0.321569, 0.156863, 0.168627, 1)
+modulate = Color(0.52549, 0.278431, 0.294118, 1)
+clip_children = 2
 offset_left = 584.0
 offset_top = 402.0
 offset_right = 724.0
@@ -92,7 +93,7 @@ axis_stretch_horizontal = 1
 axis_stretch_vertical = 1
 
 [node name="NinePatchRect8" type="NinePatchRect" parent="Platform_wood"]
-modulate = Color(0.321569, 0.156863, 0.168627, 1)
+modulate = Color(0.52549, 0.278431, 0.294118, 1)
 offset_left = 829.0
 offset_top = 546.0
 offset_right = 1049.0
@@ -106,9 +107,9 @@ axis_stretch_horizontal = 1
 axis_stretch_vertical = 1
 
 [node name="Tutorial_1" type="RichTextLabel" parent="."]
-offset_left = 113.0
+offset_left = 132.0
 offset_top = 343.0
-offset_right = 616.0
+offset_right = 597.0
 offset_bottom = 525.0
 theme = ExtResource("2_n46q3")
 theme_override_fonts/normal_font = SubResource("FontVariation_gwceb")
@@ -118,7 +119,7 @@ text = "[wave amp=9.0 freq=2]Hey there! Welcome to the tutorial,
 Use arrow keys or WASD to move!
 
 And, use spacebar or 
-up arrow key to jump![/wave]"
+up arrow key to jump (or double jump)![/wave]"
 scroll_active = false
 horizontal_alignment = 1
 custom_effects = [null]

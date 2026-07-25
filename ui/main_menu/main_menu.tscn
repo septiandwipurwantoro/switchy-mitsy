@@ -1,8 +1,10 @@
-[gd_scene load_steps=4 format=3 uid="uid://cyukwkdl3cngs"]
+[gd_scene load_steps=6 format=3 uid="uid://cyukwkdl3cngs"]
 
 [ext_resource type="Theme" uid="uid://yrd8ppbd4ny7" path="res://resources/default_theme.tres" id="1_mu8pm"]
 [ext_resource type="Script" uid="uid://cbwt6whiu142j" path="res://ui/main_menu/main_menu.gd" id="1_uhj5c"]
 [ext_resource type="PackedScene" uid="uid://b2tlbjnvd3cqh" path="res://ui/main_menu/level_preview.tscn" id="3_omy8q"]
+[ext_resource type="Texture2D" uid="uid://chol227p7i7qw" path="res://assets/backdrop/logo.png" id="4_i5wg5"]
+[ext_resource type="PackedScene" uid="uid://b8exjkt0n4dgs" path="res://entities/bg_scenes/parallax_background.tscn" id="5_3c04x"]
 
 [node name="MainMenu" type="Control"]
 layout_mode = 3
@@ -23,10 +25,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -48.0
-offset_top = -33.0
-offset_right = 48.0
-offset_bottom = 33.0
+offset_left = -117.0
+offset_top = 43.0
+offset_right = 117.0
+offset_bottom = 245.0
 grow_horizontal = 2
 grow_vertical = 2
 
@@ -106,6 +108,23 @@ columns = 2
 [node name="ReturnButton" type="Button" parent="LevelPreviews/VBoxContainer"]
 layout_mode = 2
 text = "Return"
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -437.5
+offset_top = -379.0
+offset_right = 437.5
+offset_bottom = 69.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("4_i5wg5")
+
+[node name="ParallaxBackground" parent="." instance=ExtResource("5_3c04x")]
 
 [connection signal="button_up" from="MainMenuButtons/PlayButton" to="." method="_on_start_game_button_button_up"]
 [connection signal="button_up" from="MainMenuButtons/CreditButton" to="." method="_on_credit_button_button_up"]

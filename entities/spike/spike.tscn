@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://cxt8gn0hb1v12"]
 
 [ext_resource type="Script" uid="uid://j20lgwnuvlg1" path="res://entities/spike/spike.gd" id="1_i4twe"]
-[ext_resource type="Texture2D" uid="uid://cr03ewfc4euds" path="res://icon.svg" id="1_s06m6"]
+[ext_resource type="Texture2D" uid="uid://dkxlo173ubg7m" path="res://assets/sprites/spikes.png" id="2_i4twe"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_i4twe"]
 size = Vector2(32, 62)
@@ -13,7 +13,7 @@ script = ExtResource("1_i4twe")
 shape = SubResource("RectangleShape2D_i4twe")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-scale = Vector2(0.25, 0.5)
-texture = ExtResource("1_s06m6")
+scale = Vector2(0.125, 0.242188)
+texture = ExtResource("2_i4twe")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
