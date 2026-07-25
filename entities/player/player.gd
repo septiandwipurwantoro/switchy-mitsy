@@ -29,9 +29,12 @@ var jumps_used := 0
 
 var input_disabled := false
 
+var base_camera_offset :=  Vector2.ZERO
 var _shake_tween: Tween
 
 func _ready() -> void:
+	base_camera_offset = camera_2d.offset
+	
 	GameState.count_down_over.connect(_shake_camera)
 
 func _physics_process(delta: float) -> void:
@@ -146,6 +149,6 @@ func _shake_camera() -> void:
 			randf_range(-SHAKE_STRENGTH, SHAKE_STRENGTH),
 			randf_range(-SHAKE_STRENGTH, SHAKE_STRENGTH)
 		)
-		_shake_tween.tween_property(camera_2d, "offset", offset, step_time)
+		_shake_tween.tween_property(camera_2d, "offset", base_camera_offset + offset, step_time)
 
-	_shake_tween.tween_property(camera_2d, "offset", Vector2.ZERO, step_time)
+	_shake_tween.tween_property(camera_2d, "offset", base_camera_offset, step_time)
