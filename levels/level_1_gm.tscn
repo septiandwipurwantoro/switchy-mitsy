@@ -46,13 +46,11 @@ scroll_active = false
 autowrap_mode = 2
 horizontal_alignment = 1
 
-[node name="Player" parent="." instance=ExtResource("2_fgbel")]
-position = Vector2(96, 620)
-
 [node name="Platforms" type="Node2D" parent="."]
 
 [node name="Platform" parent="Platforms" instance=ExtResource("3_1bhsk")]
 position = Vector2(256, 704)
+in_count_down = false
 size = Vector2(400, 48)
 
 [node name="Platform2" parent="Platforms" instance=ExtResource("3_1bhsk")]
@@ -89,12 +87,15 @@ position = Vector2(2132, 667)
 in_count_down = false
 size = Vector2(500, 50)
 
+[node name="Player" parent="." instance=ExtResource("2_fgbel")]
+position = Vector2(96, 620)
+
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="GUI" parent="CanvasLayer" instance=ExtResource("4_yiid0")]
 
 [node name="DeadArea" type="Area2D" parent="."]
-position = Vector2(0, 893)
+position = Vector2(0, 1090)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="DeadArea"]
 shape = SubResource("WorldBoundaryShape2D_yiid0")

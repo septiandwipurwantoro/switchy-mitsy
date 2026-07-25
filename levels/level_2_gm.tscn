@@ -1,0 +1,83 @@
+[gd_scene load_steps=7 format=3 uid="uid://f4uhei83g8me"]
+
+[ext_resource type="Script" uid="uid://78yrqjk8sox7" path="res://common/scripts/level.gd" id="1_nn5sp"]
+[ext_resource type="PackedScene" uid="uid://d0gbd5rmcbq1o" path="res://entities/player/player.tscn" id="1_tnqsl"]
+[ext_resource type="PackedScene" uid="uid://4a1t6ljv7krs" path="res://entities/platform/platform.tscn" id="2_nn5sp"]
+[ext_resource type="PackedScene" uid="uid://icugwkqmdsd7" path="res://ui/GUI/gui.tscn" id="3_e43dg"]
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_mtksr"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lhr1g"]
+size = Vector2(480, 88)
+
+[node name="level_2_gm" type="Node2D"]
+script = ExtResource("1_nn5sp")
+
+[node name="Platforms" type="Node2D" parent="."]
+
+[node name="Platform" parent="Platforms" instance=ExtResource("2_nn5sp")]
+position = Vector2(256, 704)
+in_count_down = false
+size = Vector2(400, 48)
+
+[node name="Platform6" parent="Platforms" instance=ExtResource("2_nn5sp")]
+position = Vector2(212, 77)
+in_count_down = false
+size = Vector2(100, 100)
+
+[node name="Platform5" parent="Platforms" instance=ExtResource("2_nn5sp")]
+position = Vector2(462, 52)
+in_count_down = false
+size = Vector2(400, 48)
+
+[node name="Platform2" parent="Platforms" instance=ExtResource("2_nn5sp")]
+position = Vector2(503, 541)
+in_count_down = false
+size = Vector2(90, 300)
+
+[node name="Platform3" parent="Platforms" instance=ExtResource("2_nn5sp")]
+position = Vector2(503, 290)
+in_count_down = false
+size = Vector2(90, 200)
+
+[node name="Platform4" parent="Platforms" instance=ExtResource("2_nn5sp")]
+position = Vector2(307, 242)
+in_count_down = false
+size = Vector2(90, 300)
+
+[node name="Platform7" parent="Platforms" instance=ExtResource("2_nn5sp")]
+position = Vector2(2132, 667)
+in_count_down = false
+size = Vector2(500, 50)
+
+[node name="Player" parent="." instance=ExtResource("1_tnqsl")]
+position = Vector2(96, 620)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="GUI" parent="CanvasLayer" instance=ExtResource("3_e43dg")]
+
+[node name="DeadArea" type="Area2D" parent="."]
+position = Vector2(0, 1090)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DeadArea"]
+shape = SubResource("WorldBoundaryShape2D_mtksr")
+
+[node name="FinishArea" type="Area2D" parent="."]
+position = Vector2(2134, 654)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="FinishArea"]
+shape = SubResource("RectangleShape2D_lhr1g")
+
+[node name="ColorRect" type="ColorRect" parent="FinishArea"]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -5.0
+offset_top = -240.0
+offset_right = 5.0
+grow_horizontal = 2
+grow_vertical = 0
+color = Color(1, 0.423529, 0.258824, 1)
