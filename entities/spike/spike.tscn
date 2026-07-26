@@ -24,7 +24,7 @@ offset_right = 24.0
 offset_bottom = 24.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("1_s06m6")
+texture = ExtResource("2_i4twe")
 expand_mode = 1
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
