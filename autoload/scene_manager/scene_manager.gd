@@ -27,12 +27,12 @@ func reload_current_scene():
 func change_to_next_level(current_level: String) -> void:
 	var current_index := LEVELS.find(current_level)
 	if current_index == -1:
-		push_error("Level tidak ditemukan.")
+		push_error("Level is not found")
 		return
 
 	var next_index := current_index + 1
 	if next_index >= LEVELS.size():
-		print("Sudah level terakhir.")
+		print("It's last level")
 		return
 
 	var next_level := LEVELS[next_index]

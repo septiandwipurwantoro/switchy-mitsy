@@ -12,6 +12,7 @@ script = ExtResource("1_083xy")
 layer = 100
 
 [node name="Overlay" type="ColorRect" parent="CanvasLayer"]
+visible = false
 material = SubResource("ShaderMaterial_083xy")
 anchors_preset = 15
 anchor_right = 1.0
