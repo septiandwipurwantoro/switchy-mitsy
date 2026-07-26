@@ -392,6 +392,16 @@ position = Vector2(1833, 487)
 rotation = 1.57079
 spike_index = 2
 
+[node name="Spike11" parent="Platforms" instance=ExtResource("5_gci8k")]
+position = Vector2(1685, 381)
+rotation = 4.71238
+spike_index = 2
+
+[node name="Spike12" parent="Platforms" instance=ExtResource("5_gci8k")]
+position = Vector2(1659, 444)
+rotation = 6.28318
+spike_index = 2
+
 [node name="Player" parent="." instance=ExtResource("6_gder6")]
 position = Vector2(3120, 528)
 

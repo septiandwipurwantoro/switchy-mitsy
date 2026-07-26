@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://cyukwkdl3cngs"]
+[gd_scene load_steps=16 format=3 uid="uid://cyukwkdl3cngs"]
 
 [ext_resource type="Theme" uid="uid://yrd8ppbd4ny7" path="res://resources/default_theme.tres" id="1_mu8pm"]
 [ext_resource type="Script" uid="uid://cbwt6whiu142j" path="res://ui/main_menu/main_menu.gd" id="1_uhj5c"]
@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://chol227p7i7qw" path="res://assets/backdrop/logo.png" id="4_i5wg5"]
 [ext_resource type="Texture2D" uid="uid://d2kqegvo76ir0" path="res://assets/backdrop/bg_3.png" id="5_4e78x"]
 [ext_resource type="Texture2D" uid="uid://dm2o4p8coqsp" path="res://assets/backdrop/sun.png" id="6_s4pem"]
+[ext_resource type="Texture2D" uid="uid://bowgnpemanusq" path="res://assets/backdrop/comffy.png" id="6_tf5ef"]
 [ext_resource type="Texture2D" uid="uid://cvvqhteo2fks0" path="res://assets/backdrop/bg_2.png" id="7_xio0d"]
 [ext_resource type="Texture2D" uid="uid://dx42434j67r4b" path="res://assets/backdrop/bg_1.png" id="8_tf5ef"]
 [ext_resource type="Shader" uid="uid://hcksq2xvbywy" path="res://resources/platform.gdshader" id="9_qao3l"]
@@ -57,6 +58,22 @@ z_index = -1
 position = Vector2(1185.87, 643.5)
 scale = Vector2(0.258, 0.258)
 texture = ExtResource("11_s4pem")
+
+[node name="Comffy" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(285, 439)
+scale = Vector2(5.02083, 5.02083)
+texture = ExtResource("6_tf5ef")
+
+[node name="Label" type="Label" parent="Comffy"]
+offset_left = -32.4647
+offset_top = 18.5228
+offset_right = 307.535
+offset_bottom = 85.5228
+scale = Vector2(0.192226, 0.192226)
+theme_override_constants/outline_size = 4
+theme_override_font_sizes/font_size = 56
+text = "Eyy ya found me!"
 
 [node name="MainMenuButtons" type="VBoxContainer" parent="."]
 layout_mode = 1
