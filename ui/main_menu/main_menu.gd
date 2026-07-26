@@ -38,19 +38,23 @@ func _initialize_level_preview() -> void:
 		level_preview.setup(level).locked()
 
 func _on_start_game_button_button_up() -> void:
+	AudioManager.play_sfx("button_click")
 	level_previews.show()
 	
-func _on_credit_button_button_up() -> void: 
+func _on_credit_button_button_up() -> void:
+	AudioManager.play_sfx("button_click")
 	main_menu_buttons.hide()
 	credit_container.show()
 	
-func _on_return_button_button_up() -> void: 
+func _on_return_button_button_up() -> void:
+	AudioManager.play_sfx("button_click")
 	main_menu_buttons.show()
 	
 	level_previews.hide()
 	credit_container.hide()
 	
 func _on_quit_button_button_up() -> void:
+	AudioManager.play_sfx("button_click")
 	main_menu_buttons.hide()
 	
 	UIManager.show_confirmation_panel(QUIT_ACTION_NAME)

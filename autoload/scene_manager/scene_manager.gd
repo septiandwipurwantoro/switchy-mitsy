@@ -1,6 +1,7 @@
 extends Node2D
 signal transition_finished
 
+@export var level_preview_img: Array[Texture]
 
 @onready var overlay: ColorRect = $CanvasLayer/Overlay
 
@@ -41,6 +42,10 @@ func change_to_next_level(current_level: String) -> void:
 
 	var next_level := LEVELS[next_index]
 	change_scene(next_level)
+
+func get_level_preview_img(level: String) -> Texture:
+	var index := LEVELS.find(level)
+	return level_preview_img[index]
 
 func _fade_in() -> void:
 	overlay.show()

@@ -81,6 +81,7 @@ func _handle_jump() -> void:
 	if Input.is_action_just_pressed("jump"):
 		if is_wall_sliding: return
 		
+		AudioManager.play_sfx("jump")
 		animation_player.play("jump")
 		is_jumping = true	
 		if is_on_floor():
@@ -110,8 +111,9 @@ func _handle_wall_jump() -> void:
 			wall_slide_timer = 0
 
 func _reset_after_wall_jump() -> void:
-	jumps_used += 1
+	AudioManager.play_sfx("jump")
 	animation_player.play("jump")
+	jumps_used += 1
 	is_jumping = true
 	is_wall_sliding = false
 

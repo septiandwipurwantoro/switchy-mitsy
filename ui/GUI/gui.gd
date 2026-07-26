@@ -8,13 +8,20 @@ class_name GUI
 @onready var game_over_panel: PanelContainer = $GameOverPanel
 @onready var main_menu_scene := "res://ui/main_menu/main_menu.tscn"
 
+var last_second := -1
+
 func _ready() -> void:
-	GameState.count_down_start.connect(_on_count_down_over)
+	GameState.count_down_start.connect(_on_count_down_start)
 	GameState.count_down_over.connect(_on_count_down_over)
 
 func _process(delta: float) -> void:
 	if GameState.count_down_enabled:
-		count_down_label.text = str(int(GameState.count_down) + 1)
+		var current_second := int(GameState.count_down)
+		count_down_label.text = str(current_second + 1)
+		
+		if current_second != last_second:
+			AudioManager.play_sfx("tick")
+			last_second = current_second
 
 func show_level_cleared_panel() -> void: 
 	level_cleared_panel.show()
@@ -27,27 +34,36 @@ func update_count_down_color(appeared_turn: int, platform_group_total: int) -> v
 	count_down_label.add_theme_color_override("font_color", Platform.COLOR_CODE[appeared_turn])
 	next_count_down_label.add_theme_color_override(
 		"font_color", Platform.COLOR_CODE[(appeared_turn + 1) % platform_group_total])
-		
+
+func _on_count_down_start() -> void:
+	last_second = -1
+	_on_count_down_over()
+	
 func _on_count_down_over() -> void: 
 	next_count_down_label.text = str(int(GameState.next_count_down))
 
-func _on_pause_button_button_up() -> void: 
+func _on_pause_button_button_up() -> void:
+	AudioManager.play_sfx("button_click")
 	get_tree().paused = true
 	pause_container.show()
 	
 func _on_return_button_button_up() -> void:
+	AudioManager.play_sfx("button_click")
 	get_tree().paused = false
 	pause_container.hide()
 	
 func _on_main_menu_button_button_up() -> void:
+	AudioManager.play_sfx("button_click")
 	get_tree().paused = false
 	SceneManager.change_scene(main_menu_scene)
 
 func _on_next_level_button_button_up() -> void:
+	AudioManager.play_sfx("button_click")
 	get_tree().paused = false
 	var current_level := get_tree().current_scene.scene_file_path
 	SceneManager.change_to_next_level(current_level)
 
-func _on_try_again_button_button_up() -> void: 
+func _on_try_again_button_button_up() -> void:
+	AudioManager.play_sfx("button_click")
 	get_tree().paused = false
 	SceneManager.reload_current_scene()
