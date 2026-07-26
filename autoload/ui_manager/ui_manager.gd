@@ -13,9 +13,11 @@ func show_confirmation_panel(action: String, message: String = "Are you sure?") 
 	confirmation_panel.show()
 	
 func _on_cancel_button_button_up() -> void: 
+	AudioManager.play_sfx("button_click")
 	confirmation_panel.hide()
 	action_confirmed.emit(action_name, false)
 	
 func _on_confirm_button_button_up() -> void: 
+	AudioManager.play_sfx("button_click")
 	confirmation_panel.hide()
 	action_confirmed.emit(action_name, true)

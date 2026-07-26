@@ -1,12 +1,19 @@
-[gd_scene load_steps=3 format=3 uid="uid://jov1uiv472em"]
+[gd_scene load_steps=9 format=3 uid="uid://jov1uiv472em"]
 
 [ext_resource type="Script" uid="uid://b4xvcvioecuo" path="res://autoload/scene_manager/scene_manager.gd" id="1_083xy"]
+[ext_resource type="Texture2D" uid="uid://c76nqfkqpn4gj" path="res://assets/level_preview/level_1.PNG" id="2_jwisd"]
+[ext_resource type="Texture2D" uid="uid://boi7eq4dv7do4" path="res://assets/level_preview/level_2.PNG" id="3_tkvlc"]
+[ext_resource type="Texture2D" uid="uid://drrvubfi5nriw" path="res://assets/level_preview/level_3.PNG" id="4_0vp1t"]
+[ext_resource type="Texture2D" uid="uid://brxht36spv3kj" path="res://assets/level_preview/level_4.PNG" id="5_biiec"]
+[ext_resource type="Texture2D" uid="uid://bnw476g4jwh35" path="res://assets/level_preview/level_5.PNG" id="6_acouj"]
+[ext_resource type="Texture2D" uid="uid://bsc44yk14p3iy" path="res://assets/level_preview/level_6.PNG" id="7_k5yjo"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_083xy"]
 
 [node name="SceneManager" type="Node2D"]
 process_mode = 3
 script = ExtResource("1_083xy")
+level_preview_img = Array[Texture]([ExtResource("2_jwisd"), ExtResource("3_tkvlc"), ExtResource("4_0vp1t"), ExtResource("5_biiec"), ExtResource("6_acouj"), ExtResource("7_k5yjo")])
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 layer = 100

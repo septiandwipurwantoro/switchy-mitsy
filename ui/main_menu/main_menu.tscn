@@ -37,6 +37,7 @@ mouse_filter = 2
 theme = ExtResource("1_mu8pm")
 script = ExtResource("1_uhj5c")
 level_preview_scene = ExtResource("3_omy8q")
+bgm = ExtResource("12_xio0d")
 
 [node name="Title" type="TextureRect" parent="."]
 layout_mode = 1
@@ -222,10 +223,6 @@ offset_bottom = 256.0
 scale = Vector2(2.56, 2.50781)
 texture = ExtResource("10_lknku")
 stretch_mode = 1
-
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("12_xio0d")
-autoplay = true
 
 [connection signal="button_up" from="MainMenuButtons/PlayButton" to="." method="_on_start_game_button_button_up"]
 [connection signal="button_up" from="MainMenuButtons/CreditButton" to="." method="_on_credit_button_button_up"]

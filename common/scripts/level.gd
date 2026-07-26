@@ -22,6 +22,7 @@ func _ready() -> void:
 			platform.player_hit.connect(_on_player_hit)
 
 func _on_count_down_over() -> void:
+	AudioManager.play_sfx("platform_switch")
 	var appeared_turn := appeared_count % platform_group_total
 	for platform in platforms.get_children():
 		if platform is Platform or Spike:
@@ -32,6 +33,7 @@ func _on_count_down_over() -> void:
 	appeared_count += 1
 
 func _on_player_hit() -> void:
+	AudioManager.play_sfx("hit_noise")
 	GameState.count_down_enabled = false
 	for platform in platforms.get_children():
 		platform.disable.call_deferred()
@@ -47,6 +49,7 @@ func _on_dead_area_body_entered(body: Node2D) -> void:
 
 func _on_finish_area_body_entered(body: Node2D) -> void:
 	if body is Player:
+		AudioManager.play_sfx("stage_clear")
 		is_game_cleared = true
 		
 		var save_data: SaveData = SaveManager.get_save_data("cleared_level")
