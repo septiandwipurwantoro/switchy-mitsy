@@ -27,7 +27,8 @@ func update_count_down_color(appeared_turn: int, platform_group_total: int) -> v
 	next_count_down_label.add_theme_color_override(
 		"font_color", Platform.COLOR_CODE[(appeared_turn + 1) % platform_group_total])
 		
-func _on_count_down_over() -> void: next_count_down_label.text = str(int(GameState.next_count_down))
+func _on_count_down_over() -> void: 
+	next_count_down_label.text = str(int(GameState.next_count_down))
 
 func _on_pause_button_button_up() -> void: 
 	get_tree().paused = true
@@ -49,4 +50,3 @@ func _on_next_level_button_button_up() -> void:
 func _on_try_again_button_button_up() -> void: 
 	get_tree().paused = false
 	SceneManager.reload_current_scene()
-	
