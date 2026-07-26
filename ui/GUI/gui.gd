@@ -16,7 +16,10 @@ func _process(delta: float) -> void:
 	if GameState.count_down_enabled:
 		count_down_label.text = str(int(GameState.count_down) + 1)
 
-func show_level_cleared_panel() -> void: level_cleared_panel.show()
+func show_level_cleared_panel() -> void: 
+	level_cleared_panel.show()
+	var tween := create_tween().set_ease(Tween.EASE_OUT).set_trans(Tween.TRANS_CUBIC)
+	tween.tween_property(level_cleared_panel, "position:y", 277.5, 0.5)
 func show_game_over_panel() -> void: game_over_panel.show()
 
 func update_count_down_color(appeared_turn: int, platform_group_total: int) -> void:

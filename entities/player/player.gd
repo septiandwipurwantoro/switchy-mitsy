@@ -4,6 +4,7 @@ class_name Player
 @onready var player_sprites: Node2D = $PlayerSprites
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
 @onready var camera_2d: Camera2D = $Camera2D
+@onready var particles_dust := $Particles
 
 const SPEED := 300.0
 const FRICTION := 10.0
@@ -133,8 +134,10 @@ func _handle_movement(delta) -> void:
 	velocity.x = lerp(velocity.x, direction * SPEED, FRICTION * delta)
 	if not is_jumping and not is_wall_sliding:
 		if !direction:
+			particles_dust.emitting = false
 			animation_player.play("idle")
 			return
+		particles_dust.emitting = true
 		animation_player.play("run")
 	
 	if direction == 0: return

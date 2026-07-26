@@ -1,12 +1,26 @@
-[gd_scene load_steps=12 format=3 uid="uid://d0gbd5rmcbq1o"]
+[gd_scene load_steps=16 format=3 uid="uid://d0gbd5rmcbq1o"]
 
 [ext_resource type="Script" uid="uid://d3tqwtqoc2cak" path="res://entities/player/player.gd" id="1_symyc"]
 [ext_resource type="Texture2D" uid="uid://d3jn52jmcb1q0" path="res://assets/sprites/yellow_rat/body_yellow.png" id="4_8fjmc"]
+[ext_resource type="Texture2D" uid="uid://dyjik2fxotjam" path="res://assets/backdrop/dust.png" id="5_fkugw"]
 [ext_resource type="Texture2D" uid="uid://c1inoyry3kjje" path="res://assets/sprites/yellow_rat/head_yellow.png" id="5_qiwj3"]
 [ext_resource type="Texture2D" uid="uid://bupk6jn8n4lvr" path="res://assets/sprites/yellow_rat/shoe_yellow.png" id="6_26q78"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_356b5"]
 size = Vector2(28, 72)
+
+[sub_resource type="Curve" id="Curve_8fjmc"]
+_limits = [-360.0, 360.0, 0.0, 1.0]
+_data = [Vector2(0, 0), 0.0, 35.6948, 0, 1, Vector2(0.981081, 35.0195), 35.6948, 0.0, 1, 0]
+point_count = 2
+
+[sub_resource type="Curve" id="Curve_fkugw"]
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(0.808108, 0.0972763), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="Gradient" id="Gradient_fkugw"]
+offsets = PackedFloat32Array(0.702381, 1)
+colors = PackedColorArray(1, 1, 1, 0.917647, 1, 1, 1, 0)
 
 [sub_resource type="Animation" id="Animation_qiwj3"]
 length = 0.001
@@ -776,6 +790,18 @@ drag_right_margin = 0.01
 drag_bottom_margin = 0.0
 editor_draw_limits = true
 editor_draw_drag_margin = true
+
+[node name="Particles" type="CPUParticles2D" parent="."]
+position = Vector2(0, 43)
+emitting = false
+texture = ExtResource("5_fkugw")
+lifetime = 0.3
+speed_scale = 0.5
+gravity = Vector2(0, -300)
+angle_max = 15.0
+angle_curve = SubResource("Curve_8fjmc")
+scale_amount_curve = SubResource("Curve_fkugw")
+color_ramp = SubResource("Gradient_fkugw")
 
 [node name="PlayerSprites" type="Node2D" parent="."]
 position = Vector2(0, 17)
