@@ -1,6 +1,8 @@
-[gd_scene load_steps=2 format=3 uid="uid://db4ssh5pxif28"]
+[gd_scene load_steps=3 format=3 uid="uid://db4ssh5pxif28"]
 
 [ext_resource type="Script" uid="uid://bqquhhppqlc36" path="res://autoload/audio_manager/audio_manager.gd" id="1_418ss"]
+[ext_resource type="AudioStream" uid="uid://bfclb5ranrs43" path="res://assets/songs/huh.mp3" id="2_veri3"]
 
 [node name="AudioManager" type="Node"]
 script = ExtResource("1_418ss")
+initial_bgm = ExtResource("2_veri3")

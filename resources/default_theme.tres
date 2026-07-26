@@ -59,16 +59,16 @@ corner_radius_top_right = 8
 corner_radius_bottom_right = 8
 corner_radius_bottom_left = 8
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_u656f"]
-content_margin_left = 16.0
-content_margin_top = 16.0
-content_margin_right = 16.0
-content_margin_bottom = 16.0
-bg_color = Color(0.446777, 0.446777, 0.446777, 1)
-corner_radius_top_left = 8
-corner_radius_top_right = 8
-corner_radius_bottom_right = 8
-corner_radius_bottom_left = 8
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_og51b"]
+content_margin_left = 8.0
+content_margin_top = 8.0
+content_margin_right = 8.0
+content_margin_bottom = 8.0
+bg_color = Color(0.476543, 0.150106, 0.137225, 1)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
 
 [resource]
 default_font = ExtResource("1_mwhd1")
@@ -85,5 +85,5 @@ Label/constants/paragraph_spacing = 0
 Label/font_sizes/font_size = 53
 PanelContainer/styles/panel = SubResource("StyleBoxFlat_356b5")
 SecondaryPanelContainer/base_type = &"PanelContainer"
-SecondaryPanelContainer/styles/panel = SubResource("StyleBoxFlat_u656f")
+SecondaryPanelContainer/styles/panel = SubResource("StyleBoxFlat_og51b")
 VBoxContainer/constants/separation = 8

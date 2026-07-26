@@ -1,6 +1,7 @@
 extends Control
 
 @export var level_preview_scene: PackedScene
+@export var bgm: AudioStream
 
 @onready var credit_container: PanelContainer = $CreditContainer
 @onready var level_preview_container: GridContainer = %LevelPreviewContainer
@@ -14,6 +15,7 @@ var save_data: SaveData
 func _ready() -> void:
 	save_data = SaveManager.get_save_data("cleared_level")
 	
+	AudioManager.play_background_music(bgm)
 	UIManager.action_confirmed.connect(_on_action_confirmed)
 	_initialize_level_preview()
 

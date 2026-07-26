@@ -1,3 +1,293 @@
-[gd_scene load_steps=0 format=3 uid="uid://bracys88bp1x1"]
+[gd_scene load_steps=14 format=3 uid="uid://c3e48c2wst3j0"]
+
+[ext_resource type="Script" uid="uid://78yrqjk8sox7" path="res://common/scripts/level.gd" id="1_5muv3"]
+[ext_resource type="Texture2D" uid="uid://b8hp2b6loermx" path="res://assets/backdrop/platform_wood.png" id="2_y4evx"]
+[ext_resource type="PackedScene" uid="uid://d0gbd5rmcbq1o" path="res://entities/player/player.tscn" id="3_imvil"]
+[ext_resource type="Texture2D" uid="uid://bdj6arseyvsup" path="res://assets/backdrop/window.png" id="3_y4evx"]
+[ext_resource type="PackedScene" uid="uid://4a1t6ljv7krs" path="res://entities/platform/platform.tscn" id="4_ot0dd"]
+[ext_resource type="PackedScene" uid="uid://icugwkqmdsd7" path="res://ui/GUI/gui.tscn" id="5_8i42s"]
+[ext_resource type="PackedScene" uid="uid://b8exjkt0n4dgs" path="res://entities/bg_scenes/parallax_background.tscn" id="6_vpssd"]
+[ext_resource type="Texture2D" uid="uid://cljd6rts2tsj8" path="res://assets/backdrop/IMAGE_FRIEND.png" id="8_imvil"]
+[ext_resource type="Shader" uid="uid://cnajrv1p2x0nv" path="res://resources/friend.gdshader" id="8_ot0dd"]
+[ext_resource type="PackedScene" uid="uid://8sdolefdebyt" path="res://entities/camera/camera_2d.tscn" id="10_8i42s"]
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_yglgk"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_glpk1"]
+size = Vector2(480, 88)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_8i42s"]
+shader = ExtResource("8_ot0dd")
+shader_parameter/speed = 3.0
 
 [node name="Level3" type="Node2D"]
+script = ExtResource("1_5muv3")
+platform_group_total = 5
+
+[node name="Platform_wood" type="Node2D" parent="."]
+modulate = Color(0.866667, 0.498039, 1, 1)
+
+[node name="NinePatchRect3" type="NinePatchRect" parent="Platform_wood"]
+modulate = Color(0.321569, 0.156863, 0.168627, 1)
+offset_left = 128.0
+offset_top = 544.0
+offset_right = 416.0
+offset_bottom = 684.0
+texture = ExtResource("2_y4evx")
+patch_margin_left = 32
+patch_margin_top = 32
+patch_margin_right = 32
+patch_margin_bottom = 32
+axis_stretch_horizontal = 1
+axis_stretch_vertical = 1
+
+[node name="NinePatchRect9" type="NinePatchRect" parent="Platform_wood"]
+modulate = Color(0.321569, 0.156863, 0.168627, 1)
+offset_left = 1600.0
+offset_top = 176.0
+offset_right = 1792.0
+offset_bottom = 252.0
+texture = ExtResource("2_y4evx")
+patch_margin_left = 32
+patch_margin_top = 32
+patch_margin_right = 32
+patch_margin_bottom = 32
+axis_stretch_horizontal = 1
+axis_stretch_vertical = 1
+
+[node name="NinePatchRect10" type="NinePatchRect" parent="Platform_wood"]
+modulate = Color(0.321569, 0.156863, 0.168627, 1)
+offset_left = 1696.0
+offset_top = 112.0
+offset_right = 1792.0
+offset_bottom = 188.0
+texture = ExtResource("2_y4evx")
+patch_margin_left = 32
+patch_margin_top = 32
+patch_margin_right = 32
+patch_margin_bottom = 32
+axis_stretch_horizontal = 1
+axis_stretch_vertical = 1
+
+[node name="NinePatchRect7" type="NinePatchRect" parent="Platform_wood"]
+modulate = Color(0.52549, 0.278431, 0.294118, 1)
+offset_left = 704.0
+offset_top = 144.0
+offset_right = 1600.0
+offset_bottom = 432.0
+texture = ExtResource("2_y4evx")
+patch_margin_left = 32
+patch_margin_top = 32
+patch_margin_right = 32
+patch_margin_bottom = 32
+axis_stretch_horizontal = 1
+axis_stretch_vertical = 1
+
+[node name="NinePatchRect11" type="NinePatchRect" parent="Platform_wood"]
+modulate = Color(0.52549, 0.278431, 0.294118, 1)
+offset_left = 1904.0
+offset_top = 528.0
+offset_right = 2480.0
+offset_bottom = 768.0
+texture = ExtResource("2_y4evx")
+patch_margin_left = 32
+patch_margin_top = 32
+patch_margin_right = 32
+patch_margin_bottom = 32
+axis_stretch_horizontal = 1
+axis_stretch_vertical = 1
+
+[node name="NinePatchRect8" type="NinePatchRect" parent="Platform_wood"]
+modulate = Color(0.52549, 0.278431, 0.294118, 1)
+offset_left = 848.0
+offset_top = 416.0
+offset_right = 960.0
+offset_bottom = 528.0
+texture = ExtResource("2_y4evx")
+patch_margin_left = 32
+patch_margin_top = 32
+patch_margin_right = 32
+patch_margin_bottom = 32
+axis_stretch_horizontal = 1
+axis_stretch_vertical = 1
+
+[node name="TextureRect2" type="TextureRect" parent="Platform_wood"]
+modulate = Color(0.321569, 0.156863, 0.168627, 1)
+offset_left = 1776.0
+offset_top = 112.0
+offset_right = 1916.0
+offset_bottom = 252.0
+texture = ExtResource("3_y4evx")
+expand_mode = 1
+
+[node name="Platforms" type="Node2D" parent="."]
+
+[node name="Platform" parent="Platforms" instance=ExtResource("4_ot0dd")]
+position = Vector2(96, 704)
+in_count_down = false
+size = Vector2(200, 50)
+
+[node name="Platform3" parent="Platforms" instance=ExtResource("4_ot0dd")]
+position = Vector2(303, 693)
+size = Vector2(200, 100)
+
+[node name="Platform4" parent="Platforms" instance=ExtResource("4_ot0dd")]
+position = Vector2(429, 643)
+size = Vector2(50, 200)
+
+[node name="Platform9" parent="Platforms" instance=ExtResource("4_ot0dd")]
+position = Vector2(921, 422)
+platform_index = 2
+size = Vector2(100, 50)
+
+[node name="Platform10" parent="Platforms" instance=ExtResource("4_ot0dd")]
+position = Vector2(1121, 447)
+platform_index = 2
+size = Vector2(300, 100)
+
+[node name="Platform12" parent="Platforms" instance=ExtResource("4_ot0dd")]
+position = Vector2(600, 200)
+platform_index = 3
+size = Vector2(50, 93.085)
+
+[node name="Platform13" parent="Platforms" instance=ExtResource("4_ot0dd")]
+position = Vector2(1618, 297)
+platform_index = 4
+size = Vector2(900, 100)
+
+[node name="Platform19" parent="Platforms" instance=ExtResource("4_ot0dd")]
+position = Vector2(1500, 209)
+platform_index = 4
+size = Vector2(200, 50)
+
+[node name="Platform14" parent="Platforms" instance=ExtResource("4_ot0dd")]
+position = Vector2(2017, 201)
+platform_index = 4
+size = Vector2(100, 100)
+
+[node name="Platform15" parent="Platforms" instance=ExtResource("4_ot0dd")]
+position = Vector2(1930, 103)
+platform_index = 4
+size = Vector2(50, 300)
+
+[node name="Platform16" parent="Platforms" instance=ExtResource("4_ot0dd")]
+position = Vector2(1855, 2)
+platform_index = 4
+size = Vector2(100, 100)
+
+[node name="Platform17" parent="Platforms" instance=ExtResource("4_ot0dd")]
+position = Vector2(1658, 455)
+size = Vector2(100, 100)
+
+[node name="Platform18" parent="Platforms" instance=ExtResource("4_ot0dd")]
+position = Vector2(1757, 605)
+size = Vector2(300, 200)
+
+[node name="Platform20" parent="Platforms" instance=ExtResource("4_ot0dd")]
+position = Vector2(2220, 662)
+platform_index = 1
+size = Vector2(300, 50)
+
+[node name="Platform21" parent="Platforms" instance=ExtResource("4_ot0dd")]
+position = Vector2(2321, 720)
+platform_index = 1
+size = Vector2(100, 50)
+
+[node name="Platform6" parent="Platforms" instance=ExtResource("4_ot0dd")]
+position = Vector2(671, 644)
+platform_index = 1
+size = Vector2(400, 200)
+
+[node name="Platform25" parent="Platforms" instance=ExtResource("4_ot0dd")]
+position = Vector2(672, 333)
+platform_index = 1
+size = Vector2(200, 50)
+
+[node name="Platform7" parent="Platforms" instance=ExtResource("4_ot0dd")]
+position = Vector2(823, 394)
+platform_index = 1
+size = Vector2(100, 300)
+
+[node name="Platform8" parent="Platforms" instance=ExtResource("4_ot0dd")]
+position = Vector2(724, 270)
+platform_index = 1
+size = Vector2(100, 50)
+
+[node name="Platform2" parent="Platforms" instance=ExtResource("4_ot0dd")]
+position = Vector2(2800, 704)
+in_count_down = false
+size = Vector2(500, 50)
+
+[node name="Platform5" parent="Platforms" instance=ExtResource("4_ot0dd")]
+position = Vector2(788, 571)
+platform_index = 2
+size = Vector2(100, 50)
+
+[node name="Platform11" parent="Platforms" instance=ExtResource("4_ot0dd")]
+position = Vector2(725, 296)
+platform_index = 3
+size = Vector2(300, 100)
+
+[node name="Platform22" parent="Platforms" instance=ExtResource("4_ot0dd")]
+position = Vector2(1727, -98)
+in_count_down = false
+platform_index = 3
+size = Vector2(500, 100)
+
+[node name="Platform23" parent="Platforms" instance=ExtResource("4_ot0dd")]
+position = Vector2(525, 195)
+in_count_down = false
+platform_index = 3
+size = Vector2(100, 300)
+
+[node name="Platform24" parent="Platforms" instance=ExtResource("4_ot0dd")]
+position = Vector2(525, -5)
+in_count_down = false
+platform_index = 3
+size = Vector2(100, 100)
+
+[node name="Player" parent="." instance=ExtResource("3_imvil")]
+position = Vector2(96, 544)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="GUI" parent="CanvasLayer" instance=ExtResource("5_8i42s")]
+
+[node name="DeadArea" type="Area2D" parent="."]
+position = Vector2(0, 1072)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DeadArea"]
+shape = SubResource("WorldBoundaryShape2D_yglgk")
+
+[node name="FinishArea" type="Area2D" parent="."]
+position = Vector2(2800, 688)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="FinishArea"]
+shape = SubResource("RectangleShape2D_glpk1")
+
+[node name="ColorRect" type="ColorRect" parent="FinishArea"]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -5.0
+offset_top = -240.0
+offset_right = 5.0
+grow_horizontal = 2
+grow_vertical = 0
+color = Color(1, 0.423529, 0.258824, 1)
+
+[node name="ParallaxBackground" parent="." instance=ExtResource("6_vpssd")]
+
+[node name="ImageFriend" type="Sprite2D" parent="."]
+material = SubResource("ShaderMaterial_8i42s")
+position = Vector2(-1104, 384)
+scale = Vector2(0.375, 0.375)
+texture = ExtResource("8_imvil")
+
+[node name="Camera2D" parent="." node_paths=PackedStringArray("target") instance=ExtResource("10_8i42s")]
+target = NodePath("../Player")
+
+[connection signal="body_entered" from="DeadArea" to="." method="_on_dead_area_body_entered"]
+[connection signal="body_entered" from="FinishArea" to="." method="_on_finish_area_body_entered"]

@@ -8,6 +8,9 @@ name = "cleared_level"
 data = Dictionary[String, Variant]({
 "res://levels/level_1.tscn": false,
 "res://levels/level_2.tscn": false,
-"res://levels/level_3.tscn": false
+"res://levels/level_3.tscn": false,
+"res://levels/level_4.tscn": false,
+"res://levels/level_5.tscn": false,
+"res://levels/level_6.tscn": false
 })
 metadata/_custom_type_script = "uid://ncd1df27tvdv"
