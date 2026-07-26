@@ -192,6 +192,7 @@ size = Vector2(500, 50)
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="GUI" parent="CanvasLayer" instance=ExtResource("4_iey7c")]
+process_mode = 0
 
 [node name="DeadArea" type="Area2D" parent="."]
 position = Vector2(0, 893)

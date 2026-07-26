@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://d3finxyxmooo0"]
+[gd_scene load_steps=14 format=3 uid="uid://d3finxyxmooo0"]
 
 [ext_resource type="Script" uid="uid://78yrqjk8sox7" path="res://common/scripts/level.gd" id="1_pals5"]
 [ext_resource type="Texture2D" uid="uid://b8hp2b6loermx" path="res://assets/backdrop/platform_wood.png" id="2_sloll"]
@@ -9,6 +9,7 @@
 [ext_resource type="Theme" uid="uid://yrd8ppbd4ny7" path="res://resources/default_theme.tres" id="5_j1f5l"]
 [ext_resource type="PackedScene" uid="uid://icugwkqmdsd7" path="res://ui/GUI/gui.tscn" id="5_jrbab"]
 [ext_resource type="PackedScene" uid="uid://b8exjkt0n4dgs" path="res://entities/bg_scenes/parallax_background.tscn" id="6_0giav"]
+[ext_resource type="PackedScene" uid="uid://8sdolefdebyt" path="res://entities/camera/camera_2d.tscn" id="10_jrbab"]
 
 [sub_resource type="FontVariation" id="FontVariation_1b11l"]
 spacing_glyph = 3
@@ -560,6 +561,7 @@ position = Vector2(1760, 360)
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="GUI" parent="CanvasLayer" instance=ExtResource("5_jrbab")]
+process_mode = 0
 
 [node name="DeadArea" type="Area2D" parent="."]
 position = Vector2(0, 1072)
@@ -587,6 +589,9 @@ grow_vertical = 0
 color = Color(1, 0.423529, 0.258824, 1)
 
 [node name="ParallaxBackground" parent="." instance=ExtResource("6_0giav")]
+
+[node name="Camera2D" parent="." node_paths=PackedStringArray("target") instance=ExtResource("10_jrbab")]
+target = NodePath("../Player")
 
 [connection signal="body_entered" from="DeadArea" to="." method="_on_dead_area_body_entered"]
 [connection signal="body_entered" from="FinishArea" to="." method="_on_finish_area_body_entered"]

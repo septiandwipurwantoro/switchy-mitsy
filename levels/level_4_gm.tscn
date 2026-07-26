@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://bjq7a5rxpkj6u"]
+[gd_scene load_steps=12 format=3 uid="uid://bjq7a5rxpkj6u"]
 
 [ext_resource type="Script" uid="uid://78yrqjk8sox7" path="res://common/scripts/level.gd" id="1_pnbff"]
 [ext_resource type="Texture2D" uid="uid://b8hp2b6loermx" path="res://assets/backdrop/platform_wood.png" id="2_rsqyx"]
@@ -8,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://4a1t6ljv7krs" path="res://entities/platform/platform.tscn" id="4_yms2d"]
 [ext_resource type="PackedScene" uid="uid://icugwkqmdsd7" path="res://ui/GUI/gui.tscn" id="5_fly2s"]
 [ext_resource type="PackedScene" uid="uid://b8exjkt0n4dgs" path="res://entities/bg_scenes/parallax_background.tscn" id="6_ucikj"]
+[ext_resource type="PackedScene" uid="uid://8sdolefdebyt" path="res://entities/camera/camera_2d.tscn" id="9_yms2d"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_yglgk"]
 
@@ -139,6 +140,34 @@ offset_left = 1904.0
 offset_top = 112.0
 offset_right = 2256.0
 offset_bottom = 176.0
+texture = ExtResource("2_rsqyx")
+patch_margin_left = 32
+patch_margin_top = 32
+patch_margin_right = 32
+patch_margin_bottom = 32
+axis_stretch_horizontal = 1
+axis_stretch_vertical = 1
+
+[node name="NinePatchRect13" type="NinePatchRect" parent="Platform_wood"]
+modulate = Color(0.52549, 0.278431, 0.294118, 1)
+offset_left = 1536.0
+offset_top = 176.0
+offset_right = 1680.0
+offset_bottom = 576.0
+texture = ExtResource("2_rsqyx")
+patch_margin_left = 32
+patch_margin_top = 32
+patch_margin_right = 32
+patch_margin_bottom = 32
+axis_stretch_horizontal = 1
+axis_stretch_vertical = 1
+
+[node name="NinePatchRect14" type="NinePatchRect" parent="Platform_wood"]
+modulate = Color(0.52549, 0.278431, 0.294118, 1)
+offset_left = 1664.0
+offset_top = 176.0
+offset_right = 1744.0
+offset_bottom = 336.0
 texture = ExtResource("2_rsqyx")
 patch_margin_left = 32
 patch_margin_top = 32
@@ -472,6 +501,9 @@ grow_vertical = 0
 color = Color(1, 0.423529, 0.258824, 1)
 
 [node name="ParallaxBackground" parent="." instance=ExtResource("6_ucikj")]
+
+[node name="Camera2D" parent="." node_paths=PackedStringArray("target") instance=ExtResource("9_yms2d")]
+target = NodePath("../Player")
 
 [connection signal="body_entered" from="DeadArea" to="." method="_on_dead_area_body_entered"]
 [connection signal="body_entered" from="FinishArea" to="." method="_on_finish_area_body_entered"]

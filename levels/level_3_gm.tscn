@@ -8,7 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://icugwkqmdsd7" path="res://ui/GUI/gui.tscn" id="5_8i42s"]
 [ext_resource type="PackedScene" uid="uid://b8exjkt0n4dgs" path="res://entities/bg_scenes/parallax_background.tscn" id="6_vpssd"]
 [ext_resource type="Texture2D" uid="uid://cljd6rts2tsj8" path="res://assets/backdrop/IMAGE_FRIEND.png" id="8_imvil"]
-[ext_resource type="Shader" path="res://resources/friend.gdshader" id="8_ot0dd"]
+[ext_resource type="Shader" uid="uid://cnajrv1p2x0nv" path="res://resources/friend.gdshader" id="8_ot0dd"]
 [ext_resource type="PackedScene" uid="uid://8sdolefdebyt" path="res://entities/camera/camera_2d.tscn" id="10_8i42s"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_yglgk"]
@@ -20,7 +20,7 @@ size = Vector2(480, 88)
 shader = ExtResource("8_ot0dd")
 shader_parameter/speed = 3.0
 
-[node name="Level_template" type="Node2D"]
+[node name="Level_template2" type="Node2D"]
 script = ExtResource("1_5muv3")
 platform_group_total = 5
 
