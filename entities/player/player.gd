@@ -35,7 +35,7 @@ func _physics_process(delta: float) -> void:
 
 func get_hit() -> void:
 	input_disabled = true
-	animation_player.play("jump")
+	animation_player.play("dead")
 	velocity.y = JUMP_VELOCITY
 
 func _update_wall_slide_state(delta: float) -> void:

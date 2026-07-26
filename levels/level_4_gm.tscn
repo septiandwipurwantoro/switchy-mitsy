@@ -1,0 +1,477 @@
+[gd_scene load_steps=11 format=3 uid="uid://bjq7a5rxpkj6u"]
+
+[ext_resource type="Script" uid="uid://78yrqjk8sox7" path="res://common/scripts/level.gd" id="1_pnbff"]
+[ext_resource type="Texture2D" uid="uid://b8hp2b6loermx" path="res://assets/backdrop/platform_wood.png" id="2_rsqyx"]
+[ext_resource type="PackedScene" uid="uid://d0gbd5rmcbq1o" path="res://entities/player/player.tscn" id="3_6v1gv"]
+[ext_resource type="Texture2D" uid="uid://bdj6arseyvsup" path="res://assets/backdrop/window.png" id="3_yms2d"]
+[ext_resource type="PackedScene" uid="uid://cxt8gn0hb1v12" path="res://entities/spike/spike.tscn" id="4_rsqyx"]
+[ext_resource type="PackedScene" uid="uid://4a1t6ljv7krs" path="res://entities/platform/platform.tscn" id="4_yms2d"]
+[ext_resource type="PackedScene" uid="uid://icugwkqmdsd7" path="res://ui/GUI/gui.tscn" id="5_fly2s"]
+[ext_resource type="PackedScene" uid="uid://b8exjkt0n4dgs" path="res://entities/bg_scenes/parallax_background.tscn" id="6_ucikj"]
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_yglgk"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_glpk1"]
+size = Vector2(480, 88)
+
+[node name="Level_template" type="Node2D"]
+script = ExtResource("1_pnbff")
+platform_group_total = 6
+
+[node name="Platform_wood" type="Node2D" parent="."]
+modulate = Color(1, 0.658824, 0.647059, 1)
+
+[node name="NinePatchRect1" type="NinePatchRect" parent="Platform_wood"]
+modulate = Color(0.321569, 0.156863, 0.168627, 1)
+offset_left = 96.0
+offset_top = 464.0
+offset_right = 528.0
+offset_bottom = 700.0
+texture = ExtResource("2_rsqyx")
+patch_margin_left = 32
+patch_margin_top = 32
+patch_margin_right = 32
+patch_margin_bottom = 32
+axis_stretch_horizontal = 1
+axis_stretch_vertical = 1
+
+[node name="NinePatchRect3" type="NinePatchRect" parent="Platform_wood"]
+modulate = Color(0.321569, 0.156863, 0.168627, 1)
+offset_left = 816.0
+offset_top = 160.0
+offset_right = 1248.0
+offset_bottom = 352.0
+texture = ExtResource("2_rsqyx")
+patch_margin_left = 32
+patch_margin_top = 32
+patch_margin_right = 32
+patch_margin_bottom = 32
+axis_stretch_horizontal = 1
+axis_stretch_vertical = 1
+
+[node name="NinePatchRect4" type="NinePatchRect" parent="Platform_wood"]
+modulate = Color(0.321569, 0.156863, 0.168627, 1)
+offset_left = 1232.0
+offset_top = 256.0
+offset_right = 1456.0
+offset_bottom = 352.0
+texture = ExtResource("2_rsqyx")
+patch_margin_left = 32
+patch_margin_top = 32
+patch_margin_right = 32
+patch_margin_bottom = 32
+axis_stretch_horizontal = 1
+axis_stretch_vertical = 1
+
+[node name="NinePatchRect5" type="NinePatchRect" parent="Platform_wood"]
+modulate = Color(0.321569, 0.156863, 0.168627, 1)
+offset_left = 1040.0
+offset_top = 336.0
+offset_right = 1264.0
+offset_bottom = 640.0
+texture = ExtResource("2_rsqyx")
+patch_margin_left = 32
+patch_margin_top = 32
+patch_margin_right = 32
+patch_margin_bottom = 32
+axis_stretch_horizontal = 1
+axis_stretch_vertical = 1
+
+[node name="NinePatchRect6" type="NinePatchRect" parent="Platform_wood"]
+modulate = Color(0.321569, 0.156863, 0.168627, 1)
+offset_left = 1248.0
+offset_top = 560.0
+offset_right = 1472.0
+offset_bottom = 672.0
+texture = ExtResource("2_rsqyx")
+patch_margin_left = 32
+patch_margin_top = 32
+patch_margin_right = 32
+patch_margin_bottom = 32
+axis_stretch_horizontal = 1
+axis_stretch_vertical = 1
+
+[node name="NinePatchRect7" type="NinePatchRect" parent="Platform_wood"]
+modulate = Color(0.52549, 0.278431, 0.294118, 1)
+offset_left = 1248.0
+offset_top = 464.0
+offset_right = 1360.0
+offset_bottom = 576.0
+texture = ExtResource("2_rsqyx")
+patch_margin_left = 32
+patch_margin_top = 32
+patch_margin_right = 32
+patch_margin_bottom = 32
+axis_stretch_horizontal = 1
+axis_stretch_vertical = 1
+
+[node name="NinePatchRect8" type="NinePatchRect" parent="Platform_wood"]
+modulate = Color(0.52549, 0.278431, 0.294118, 1)
+offset_left = 2016.0
+offset_top = 160.0
+offset_right = 2256.0
+offset_bottom = 544.0
+texture = ExtResource("2_rsqyx")
+patch_margin_left = 32
+patch_margin_top = 32
+patch_margin_right = 32
+patch_margin_bottom = 32
+axis_stretch_horizontal = 1
+axis_stretch_vertical = 1
+
+[node name="NinePatchRect9" type="NinePatchRect" parent="Platform_wood"]
+modulate = Color(0.52549, 0.278431, 0.294118, 1)
+offset_left = 1904.0
+offset_top = 160.0
+offset_right = 2032.0
+offset_bottom = 256.0
+texture = ExtResource("2_rsqyx")
+patch_margin_left = 32
+patch_margin_top = 32
+patch_margin_right = 32
+patch_margin_bottom = 32
+axis_stretch_horizontal = 1
+axis_stretch_vertical = 1
+
+[node name="NinePatchRect10" type="NinePatchRect" parent="Platform_wood"]
+modulate = Color(0.52549, 0.278431, 0.294118, 1)
+offset_left = 1904.0
+offset_top = 112.0
+offset_right = 2256.0
+offset_bottom = 176.0
+texture = ExtResource("2_rsqyx")
+patch_margin_left = 32
+patch_margin_top = 32
+patch_margin_right = 32
+patch_margin_bottom = 32
+axis_stretch_horizontal = 1
+axis_stretch_vertical = 1
+
+[node name="NinePatchRect11" type="NinePatchRect" parent="Platform_wood"]
+modulate = Color(0.52549, 0.278431, 0.294118, 1)
+offset_left = 2736.0
+offset_top = 384.0
+offset_right = 3616.0
+offset_bottom = 464.0
+texture = ExtResource("2_rsqyx")
+patch_margin_left = 32
+patch_margin_top = 32
+patch_margin_right = 32
+patch_margin_bottom = 32
+axis_stretch_horizontal = 1
+axis_stretch_vertical = 1
+
+[node name="NinePatchRect12" type="NinePatchRect" parent="Platform_wood"]
+modulate = Color(0.52549, 0.278431, 0.294118, 1)
+offset_left = 2736.0
+offset_top = 448.0
+offset_right = 3232.0
+offset_bottom = 528.0
+texture = ExtResource("2_rsqyx")
+patch_margin_left = 32
+patch_margin_top = 32
+patch_margin_right = 32
+patch_margin_bottom = 32
+axis_stretch_horizontal = 1
+axis_stretch_vertical = 1
+
+[node name="TextureRect" type="TextureRect" parent="Platform_wood"]
+modulate = Color(0.321569, 0.156863, 0.168627, 1)
+offset_left = 368.0
+offset_top = 352.0
+offset_right = 490.0
+offset_bottom = 477.0
+texture = ExtResource("3_yms2d")
+expand_mode = 1
+
+[node name="TextureRect2" type="TextureRect" parent="Platform_wood"]
+modulate = Color(0.321569, 0.156863, 0.168627, 1)
+offset_left = 928.0
+offset_top = 336.0
+offset_right = 1050.0
+offset_bottom = 461.0
+texture = ExtResource("3_yms2d")
+expand_mode = 1
+
+[node name="TextureRect3" type="TextureRect" parent="Platform_wood"]
+modulate = Color(0.52549, 0.278431, 0.294118, 1)
+offset_left = 2240.0
+offset_top = 208.0
+offset_right = 2362.0
+offset_bottom = 333.0
+texture = ExtResource("3_yms2d")
+expand_mode = 1
+
+[node name="TextureRect4" type="TextureRect" parent="Platform_wood"]
+modulate = Color(0.52549, 0.278431, 0.294118, 1)
+offset_left = 1232.0
+offset_top = 176.0
+offset_right = 1328.0
+offset_bottom = 272.0
+texture = ExtResource("3_yms2d")
+expand_mode = 1
+
+[node name="Platforms" type="Node2D" parent="."]
+
+[node name="Platform" parent="Platforms" instance=ExtResource("4_yms2d")]
+position = Vector2(80, 704)
+in_count_down = false
+size = Vector2(200, 48)
+
+[node name="Platform2" parent="Platforms" instance=ExtResource("4_yms2d")]
+position = Vector2(384, 576)
+size = Vector2(200, 48)
+
+[node name="Platform22" parent="Platforms" instance=ExtResource("4_yms2d")]
+position = Vector2(496, 640)
+size = Vector2(100, 48)
+
+[node name="Platform3" parent="Platforms" instance=ExtResource("4_yms2d")]
+position = Vector2(512, 464)
+size = Vector2(50, 300)
+
+[node name="Platform4" parent="Platforms" instance=ExtResource("4_yms2d")]
+position = Vector2(832, 239)
+platform_index = 1
+size = Vector2(50, 200)
+
+[node name="Platform5" parent="Platforms" instance=ExtResource("4_yms2d")]
+position = Vector2(1021, 164)
+platform_index = 1
+size = Vector2(300, 50)
+
+[node name="Platform6" parent="Platforms" instance=ExtResource("4_yms2d")]
+position = Vector2(1296, 352)
+platform_index = 1
+size = Vector2(500, 50)
+
+[node name="Platform7" parent="Platforms" instance=ExtResource("4_yms2d")]
+position = Vector2(1504, 128)
+platform_index = 1
+size = Vector2(50, 400)
+
+[node name="Platform24" parent="Platforms" instance=ExtResource("4_yms2d")]
+position = Vector2(1440, 43)
+platform_index = 1
+size = Vector2(50, 100)
+
+[node name="Platform8" parent="Platforms" instance=ExtResource("4_yms2d")]
+position = Vector2(1376, -48)
+in_count_down = false
+size = Vector2(200, 50)
+
+[node name="Platform14" parent="Platforms" instance=ExtResource("4_yms2d")]
+position = Vector2(1184, -112)
+in_count_down = false
+size = Vector2(200, 50)
+
+[node name="Platform15" parent="Platforms" instance=ExtResource("4_yms2d")]
+position = Vector2(2576, 352)
+size = Vector2(200, 50)
+
+[node name="Platform16" parent="Platforms" instance=ExtResource("4_yms2d")]
+position = Vector2(2848, 352)
+platform_index = 1
+size = Vector2(300, 50)
+
+[node name="Platform17" parent="Platforms" instance=ExtResource("4_yms2d")]
+position = Vector2(3168, 377)
+platform_index = 2
+size = Vector2(300, 100)
+
+[node name="Platform18" parent="Platforms" instance=ExtResource("4_yms2d")]
+position = Vector2(3488, 427)
+platform_index = 3
+size = Vector2(300, 200)
+
+[node name="Platform19" parent="Platforms" instance=ExtResource("4_yms2d")]
+position = Vector2(3792, 352)
+platform_index = 4
+size = Vector2(300, 50)
+
+[node name="Platform21" parent="Platforms" instance=ExtResource("4_yms2d")]
+position = Vector2(3936, 688)
+in_count_down = false
+size = Vector2(500, 100)
+
+[node name="Platform9" parent="Platforms" instance=ExtResource("4_yms2d")]
+position = Vector2(912, 608)
+platform_index = 2
+size = Vector2(200, 200)
+
+[node name="Platform10" parent="Platforms" instance=ExtResource("4_yms2d")]
+position = Vector2(1216, 608)
+platform_index = 3
+size = Vector2(200, 50)
+
+[node name="Platform25" parent="Platforms" instance=ExtResource("4_yms2d")]
+position = Vector2(1901, 673)
+platform_index = 3
+size = Vector2(200, 50)
+
+[node name="Platform23" parent="Platforms" instance=ExtResource("4_yms2d")]
+position = Vector2(1262, 672)
+platform_index = 3
+size = Vector2(50, 50)
+
+[node name="Platform11" parent="Platforms" instance=ExtResource("4_yms2d")]
+position = Vector2(1552, 748)
+platform_index = 3
+size = Vector2(500, 200)
+
+[node name="Platform12" parent="Platforms" instance=ExtResource("4_yms2d")]
+position = Vector2(1616, 368)
+platform_index = 4
+size = Vector2(50, 400)
+
+[node name="Platform13" parent="Platforms" instance=ExtResource("4_yms2d")]
+position = Vector2(2320, 477)
+platform_index = 5
+size = Vector2(300, 300)
+
+[node name="Platform20" parent="Platforms" instance=ExtResource("4_yms2d")]
+position = Vector2(2128, 480)
+platform_index = 5
+size = Vector2(50, 400)
+
+[node name="Spike5" parent="Platforms" instance=ExtResource("4_rsqyx")]
+position = Vector2(1055, 115)
+spike_index = 1
+
+[node name="Spike17" parent="Platforms" instance=ExtResource("4_rsqyx")]
+position = Vector2(784, 368)
+rotation = -1.57079
+spike_index = 1
+
+[node name="Spike31" parent="Platforms" instance=ExtResource("4_rsqyx")]
+position = Vector2(784, 416)
+rotation = -1.57079
+spike_index = 1
+
+[node name="Spike32" parent="Platforms" instance=ExtResource("4_rsqyx")]
+position = Vector2(784, 464)
+rotation = -1.57079
+spike_index = 1
+
+[node name="Spike9" parent="Platforms" instance=ExtResource("4_rsqyx")]
+position = Vector2(1102, 115)
+spike_index = 1
+
+[node name="Spike10" parent="Platforms" instance=ExtResource("4_rsqyx")]
+position = Vector2(880, 115)
+spike_index = 2
+
+[node name="Spike11" parent="Platforms" instance=ExtResource("4_rsqyx")]
+position = Vector2(927, 115)
+spike_index = 2
+
+[node name="Spike12" parent="Platforms" instance=ExtResource("4_rsqyx")]
+position = Vector2(1304, 304)
+spike_index = 1
+
+[node name="Spike13" parent="Platforms" instance=ExtResource("4_rsqyx")]
+position = Vector2(1351, 304)
+spike_index = 1
+
+[node name="Spike14" parent="Platforms" instance=ExtResource("4_rsqyx")]
+position = Vector2(1344, 624)
+spike_index = 3
+
+[node name="Spike18" parent="Platforms" instance=ExtResource("4_rsqyx")]
+position = Vector2(2574, 302)
+spike_index = 1
+
+[node name="Spike19" parent="Platforms" instance=ExtResource("4_rsqyx")]
+position = Vector2(2776, 302)
+in_count_down = false
+
+[node name="Spike20" parent="Platforms" instance=ExtResource("4_rsqyx")]
+position = Vector2(2917, 302)
+in_count_down = false
+
+[node name="Spike21" parent="Platforms" instance=ExtResource("4_rsqyx")]
+position = Vector2(3077, 302)
+spike_index = 1
+
+[node name="Spike22" parent="Platforms" instance=ExtResource("4_rsqyx")]
+position = Vector2(3254, 302)
+spike_index = 3
+
+[node name="Spike23" parent="Platforms" instance=ExtResource("4_rsqyx")]
+position = Vector2(3395, 302)
+in_count_down = false
+
+[node name="Spike24" parent="Platforms" instance=ExtResource("4_rsqyx")]
+position = Vector2(3581, 302)
+spike_index = 4
+
+[node name="Spike25" parent="Platforms" instance=ExtResource("4_rsqyx")]
+position = Vector2(3695, 302)
+spike_index = 3
+
+[node name="Spike26" parent="Platforms" instance=ExtResource("4_rsqyx")]
+position = Vector2(3909, 302)
+in_count_down = false
+
+[node name="Spike15" parent="Platforms" instance=ExtResource("4_rsqyx")]
+position = Vector2(1391, 624)
+spike_index = 3
+
+[node name="Spike16" parent="Platforms" instance=ExtResource("4_rsqyx")]
+position = Vector2(1679, 211)
+rotation = 1.57079
+in_count_down = false
+
+[node name="Spike33" parent="Platforms" instance=ExtResource("4_rsqyx")]
+position = Vector2(2080, 640)
+rotation = 4.71238
+in_count_down = false
+
+[node name="Spike6" parent="Platforms" instance=ExtResource("4_rsqyx")]
+position = Vector2(784, 272)
+rotation = -1.57079
+
+[node name="Spike7" parent="Platforms" instance=ExtResource("4_rsqyx")]
+position = Vector2(784, 224)
+rotation = -1.57079
+
+[node name="Spike8" parent="Platforms" instance=ExtResource("4_rsqyx")]
+position = Vector2(784, 176)
+rotation = -1.57079
+
+[node name="Player" parent="." instance=ExtResource("3_6v1gv")]
+position = Vector2(96, 544)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="GUI" parent="CanvasLayer" instance=ExtResource("5_fly2s")]
+
+[node name="DeadArea" type="Area2D" parent="."]
+position = Vector2(0, 1072)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DeadArea"]
+shape = SubResource("WorldBoundaryShape2D_yglgk")
+
+[node name="FinishArea" type="Area2D" parent="."]
+position = Vector2(3936, 654)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="FinishArea"]
+shape = SubResource("RectangleShape2D_glpk1")
+
+[node name="ColorRect" type="ColorRect" parent="FinishArea"]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -5.0
+offset_top = -240.0
+offset_right = 5.0
+grow_horizontal = 2
+grow_vertical = 0
+color = Color(1, 0.423529, 0.258824, 1)
+
+[node name="ParallaxBackground" parent="." instance=ExtResource("6_ucikj")]
+
+[connection signal="body_entered" from="DeadArea" to="." method="_on_dead_area_body_entered"]
+[connection signal="body_entered" from="FinishArea" to="." method="_on_finish_area_body_entered"]

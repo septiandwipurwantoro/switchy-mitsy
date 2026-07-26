@@ -59,6 +59,7 @@ func update_existence(appeared_turn: int, platform_group_total: int) -> void:
 
 	if platform_group_total > 1:
 		var transparant := float(queue_distance) / float(platform_group_total - 1)
+		platform_lines.modulate.a = transparant
 		platform_sprite.modulate.a = lerp(1.0, 0.1, transparant)
 	else: platform_sprite.modulate.a = 1.0
 
