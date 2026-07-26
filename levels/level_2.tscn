@@ -1,10 +1,11 @@
-[gd_scene load_steps=7 format=3 uid="uid://cti6gt5wyu5t4"]
+[gd_scene load_steps=8 format=3 uid="uid://cti6gt5wyu5t4"]
 
 [ext_resource type="PackedScene" uid="uid://4a1t6ljv7krs" path="res://entities/platform/platform.tscn" id="1_0srwa"]
 [ext_resource type="Script" uid="uid://78yrqjk8sox7" path="res://common/scripts/level.gd" id="1_5722l"]
 [ext_resource type="PackedScene" uid="uid://cxt8gn0hb1v12" path="res://entities/spike/spike.tscn" id="2_5722l"]
 [ext_resource type="PackedScene" uid="uid://d0gbd5rmcbq1o" path="res://entities/player/player.tscn" id="2_v5uil"]
 [ext_resource type="PackedScene" uid="uid://icugwkqmdsd7" path="res://ui/GUI/gui.tscn" id="3_5722l"]
+[ext_resource type="PackedScene" uid="uid://8sdolefdebyt" path="res://entities/camera/camera_2d.tscn" id="6_ilhis"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_5722l"]
 
@@ -45,5 +46,8 @@ shape = SubResource("WorldBoundaryShape2D_5722l")
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="GUI" parent="CanvasLayer" instance=ExtResource("3_5722l")]
+
+[node name="Camera2D" parent="." node_paths=PackedStringArray("target") instance=ExtResource("6_ilhis")]
+target = NodePath("../Player")
 
 [connection signal="body_entered" from="DeadArea" to="." method="_on_dead_area_body_entered"]

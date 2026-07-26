@@ -42,6 +42,7 @@ func _on_main_menu_button_button_up() -> void:
 	SceneManager.change_scene(main_menu_scene)
 
 func _on_next_level_button_button_up() -> void:
+	get_tree().paused = false
 	var current_level := get_tree().current_scene.scene_file_path
 	SceneManager.change_to_next_level(current_level)
 
