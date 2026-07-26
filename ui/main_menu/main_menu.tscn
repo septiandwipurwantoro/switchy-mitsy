@@ -132,7 +132,7 @@ layout_mode = 2
 theme_override_font_sizes/normal_font_size = 46
 theme_override_styles/normal = SubResource("StyleBoxFlat_s4pem")
 bbcode_enabled = true
-text = "[outline_size=10][wave][color=cyan]Lenny[/color] : Artist, Level Designer, Director
+text = "[outline_size=10][wave][color=cyan]Lenny[/color] : Artist, Level Designer, Director, Music (the bad one)
 [color=pink]Mungkidi[/color] : Programmer
 [color=gray]Mishikis[/color] : Composer, SFX Artist[/wave][/outline_size]"
 fit_content = true

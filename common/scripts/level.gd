@@ -43,7 +43,7 @@ func _on_player_hit() -> void:
 func _on_dead_area_body_entered(body: Node2D) -> void:
 	if body is Player:
 		get_tree().paused = true
-		
+		AudioManager.play_sfx("hit_noise")
 		if is_game_cleared: return
 		gui.show_game_over_panel()
 
