@@ -1,6 +1,7 @@
 extends Node2D
 class_name Level
 
+@export var bgm: AudioStream = preload("res://assets/songs/stage.ogg")
 @export var platform_group_total := 3
 
 @onready var platforms: Node2D = $Platforms
@@ -13,6 +14,7 @@ var appeared_count := 0
 var is_game_cleared := false
 
 func _ready() -> void: 
+	AudioManager.play_background_music(bgm, -15.0)
 	GameState.start_count_down(platform_group_total)
 	GameState.count_down_over.connect(_on_count_down_over)
 	_on_count_down_over()
