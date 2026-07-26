@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://csd58qvpu4jdk"]
+[gd_scene load_steps=12 format=3 uid="uid://csd58qvpu4jdk"]
 
 [ext_resource type="Script" uid="uid://78yrqjk8sox7" path="res://common/scripts/level.gd" id="1_iey7c"]
 [ext_resource type="PackedScene" uid="uid://4a1t6ljv7krs" path="res://entities/platform/platform.tscn" id="2_45440"]
@@ -6,6 +6,7 @@
 [ext_resource type="Theme" uid="uid://yrd8ppbd4ny7" path="res://resources/default_theme.tres" id="2_n46q3"]
 [ext_resource type="PackedScene" uid="uid://d0gbd5rmcbq1o" path="res://entities/player/player.tscn" id="3_epb64"]
 [ext_resource type="PackedScene" uid="uid://icugwkqmdsd7" path="res://ui/GUI/gui.tscn" id="4_iey7c"]
+[ext_resource type="PackedScene" uid="uid://8sdolefdebyt" path="res://entities/camera/camera_2d.tscn" id="5_l53as"]
 [ext_resource type="PackedScene" uid="uid://b8exjkt0n4dgs" path="res://entities/bg_scenes/parallax_background.tscn" id="6_btoec"]
 
 [sub_resource type="FontVariation" id="FontVariation_gwceb"]
@@ -143,6 +144,9 @@ horizontal_alignment = 1
 
 [node name="Player" parent="." instance=ExtResource("3_epb64")]
 position = Vector2(96, 620)
+
+[node name="Camera2D" parent="." node_paths=PackedStringArray("target") instance=ExtResource("5_l53as")]
+target = NodePath("../Player")
 
 [node name="Platforms" type="Node2D" parent="."]
 

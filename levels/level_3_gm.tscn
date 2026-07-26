@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://c3e48c2wst3j0"]
+[gd_scene load_steps=14 format=3 uid="uid://c3e48c2wst3j0"]
 
 [ext_resource type="Script" uid="uid://78yrqjk8sox7" path="res://common/scripts/level.gd" id="1_5muv3"]
 [ext_resource type="Texture2D" uid="uid://b8hp2b6loermx" path="res://assets/backdrop/platform_wood.png" id="2_y4evx"]
@@ -8,7 +8,8 @@
 [ext_resource type="PackedScene" uid="uid://icugwkqmdsd7" path="res://ui/GUI/gui.tscn" id="5_8i42s"]
 [ext_resource type="PackedScene" uid="uid://b8exjkt0n4dgs" path="res://entities/bg_scenes/parallax_background.tscn" id="6_vpssd"]
 [ext_resource type="Texture2D" uid="uid://cljd6rts2tsj8" path="res://assets/backdrop/IMAGE_FRIEND.png" id="8_imvil"]
-[ext_resource type="Shader" uid="uid://cnajrv1p2x0nv" path="res://resources/friend.gdshader" id="8_ot0dd"]
+[ext_resource type="Shader" path="res://resources/friend.gdshader" id="8_ot0dd"]
+[ext_resource type="PackedScene" uid="uid://8sdolefdebyt" path="res://entities/camera/camera_2d.tscn" id="10_8i42s"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_yglgk"]
 
@@ -284,6 +285,9 @@ material = SubResource("ShaderMaterial_8i42s")
 position = Vector2(-1104, 384)
 scale = Vector2(0.375, 0.375)
 texture = ExtResource("8_imvil")
+
+[node name="Camera2D" parent="." node_paths=PackedStringArray("target") instance=ExtResource("10_8i42s")]
+target = NodePath("../Player")
 
 [connection signal="body_entered" from="DeadArea" to="." method="_on_dead_area_body_entered"]
 [connection signal="body_entered" from="FinishArea" to="." method="_on_finish_area_body_entered"]

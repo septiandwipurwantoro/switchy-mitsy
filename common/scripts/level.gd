@@ -8,7 +8,6 @@ class_name Level
 @onready var player: Player = $Player
 @onready var main_menu_scene := "res://ui/main_menu/main_menu.tscn"
 
-
 var appeared_count := 0
 
 var is_game_cleared := false

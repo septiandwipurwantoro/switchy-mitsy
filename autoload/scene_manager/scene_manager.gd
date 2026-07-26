@@ -9,6 +9,7 @@ const  LEVELS: Array[String] = [
 	"res://levels/level_2.tscn",
 	"res://levels/level_3.tscn"
 ]
+const  MAIN_MENU := "res://ui/main_menu/main_menu.tscn"
 
 const FADE_DURATION := 0.3
 
@@ -27,12 +28,12 @@ func reload_current_scene():
 func change_to_next_level(current_level: String) -> void:
 	var current_index := LEVELS.find(current_level)
 	if current_index == -1:
-		push_error("Level tidak ditemukan.")
+		push_error("Level is not found")
 		return
 
 	var next_index := current_index + 1
 	if next_index >= LEVELS.size():
-		print("Sudah level terakhir.")
+		change_scene(MAIN_MENU)
 		return
 
 	var next_level := LEVELS[next_index]

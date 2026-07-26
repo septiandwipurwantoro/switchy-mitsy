@@ -3,7 +3,6 @@ class_name Player
 
 @onready var player_sprites: Node2D = $PlayerSprites
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
-@onready var camera_2d: Camera2D = $Camera2D
 @onready var particles_dust := $Particles
 
 const SPEED := 300.0
@@ -19,24 +18,12 @@ const WALL_JUMP_UP := -400.0
 const WALL_JUMP_UP_ONLY := -450.0
 const FAST_FALL_SPEED := 600.0
 
-const SHAKE_STRENGTH: float = 8.0
-const SHAKE_DURATION: float = 0.3
-const SHAKE_COUNT: int = 6
-
 var is_jumping := false
 var is_wall_sliding := false
 var wall_slide_timer := 0.0
 var jumps_used := 0
 
 var input_disabled := false
-
-var base_camera_offset :=  Vector2.ZERO
-var _shake_tween: Tween
-
-func _ready() -> void:
-	base_camera_offset = camera_2d.offset
-	
-	GameState.count_down_over.connect(_shake_camera)
 
 func _physics_process(delta: float) -> void:
 	_update_wall_slide_state(delta)
@@ -92,10 +79,10 @@ func _handle_jump() -> void:
 	
 	if input_disabled: return
 	if Input.is_action_just_pressed("jump"):
-		if not is_wall_sliding:
-			animation_player.play("jump")
-			is_jumping = true
-			
+		if is_wall_sliding: return
+		
+		animation_player.play("jump")
+		is_jumping = true	
 		if is_on_floor():
 			velocity.y = JUMP_VELOCITY
 			jumps_used = 1
@@ -146,19 +133,3 @@ func _handle_movement(delta) -> void:
 func _flip(flipped: bool) -> void:
 	if flipped: player_sprites.scale.x = -0.288
 	else: player_sprites.scale.x = 0.288
-
-func _shake_camera() -> void:
-	if _shake_tween and _shake_tween.is_valid():
-		_shake_tween.kill()
-
-	_shake_tween = create_tween()
-	var step_time := SHAKE_DURATION / SHAKE_COUNT
-
-	for i in SHAKE_COUNT:
-		var offset := Vector2(
-			randf_range(-SHAKE_STRENGTH, SHAKE_STRENGTH),
-			randf_range(-SHAKE_STRENGTH, SHAKE_STRENGTH)
-		)
-		_shake_tween.tween_property(camera_2d, "offset", base_camera_offset + offset, step_time)
-
-	_shake_tween.tween_property(camera_2d, "offset", base_camera_offset, step_time)
