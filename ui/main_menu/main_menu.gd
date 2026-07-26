@@ -15,7 +15,7 @@ var save_data: SaveData
 func _ready() -> void:
 	save_data = SaveManager.get_save_data("cleared_level")
 	
-	AudioManager.play_background_music(bgm, -15.0)
+	AudioManager.play_background_music(bgm, -10.0)
 	UIManager.action_confirmed.connect(_on_action_confirmed)
 	_initialize_level_preview()
 

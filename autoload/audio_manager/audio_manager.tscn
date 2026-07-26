@@ -1,7 +1,7 @@
 [gd_scene load_steps=9 format=3 uid="uid://db4ssh5pxif28"]
 
 [ext_resource type="Script" uid="uid://bqquhhppqlc36" path="res://autoload/audio_manager/audio_manager.gd" id="1_418ss"]
-[ext_resource type="AudioStream" uid="uid://bfclb5ranrs43" path="res://assets/songs/huh.mp3" id="2_veri3"]
+[ext_resource type="AudioStream" uid="uid://cn85sqaq4t8qc" path="res://assets/songs/bs.mp3" id="2_180s8"]
 [ext_resource type="AudioStream" uid="uid://djdah5d510ssl" path="res://assets/sfx/button_click_the_actual_one.wav" id="3_180s8"]
 [ext_resource type="AudioStream" uid="uid://d2p4ikffilf83" path="res://assets/sfx/hit_noise.wav" id="4_b4cw0"]
 [ext_resource type="AudioStream" uid="uid://dh1hcd0uq01q3" path="res://assets/sfx/jump.wav" id="5_d6pjd"]
@@ -11,7 +11,7 @@
 
 [node name="AudioManager" type="Node"]
 script = ExtResource("1_418ss")
-initial_bgm = ExtResource("2_veri3")
+initial_bgm = ExtResource("2_180s8")
 sfx_library = Dictionary[String, AudioStream]({
 "button_click": ExtResource("3_180s8"),
 "hit_noise": ExtResource("4_b4cw0"),

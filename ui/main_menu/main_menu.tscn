@@ -4,6 +4,7 @@
 [ext_resource type="Script" uid="uid://cbwt6whiu142j" path="res://ui/main_menu/main_menu.gd" id="1_uhj5c"]
 [ext_resource type="PackedScene" uid="uid://b2tlbjnvd3cqh" path="res://ui/main_menu/level_preview.tscn" id="3_omy8q"]
 [ext_resource type="Texture2D" uid="uid://chol227p7i7qw" path="res://assets/backdrop/logo.png" id="4_i5wg5"]
+[ext_resource type="AudioStream" uid="uid://cn85sqaq4t8qc" path="res://assets/songs/bs.mp3" id="4_tf5ef"]
 [ext_resource type="Texture2D" uid="uid://d2kqegvo76ir0" path="res://assets/backdrop/bg_3.png" id="5_4e78x"]
 [ext_resource type="Texture2D" uid="uid://dm2o4p8coqsp" path="res://assets/backdrop/sun.png" id="6_s4pem"]
 [ext_resource type="Texture2D" uid="uid://bowgnpemanusq" path="res://assets/backdrop/comffy.png" id="6_tf5ef"]
@@ -12,7 +13,6 @@
 [ext_resource type="Shader" uid="uid://hcksq2xvbywy" path="res://resources/platform.gdshader" id="9_qao3l"]
 [ext_resource type="Texture2D" uid="uid://dmtyicl2qmxkh" path="res://assets/backdrop/cloud.png" id="10_lknku"]
 [ext_resource type="Texture2D" uid="uid://cah5vl83dcehb" path="res://assets/gmtk.png" id="11_s4pem"]
-[ext_resource type="AudioStream" uid="uid://bfclb5ranrs43" path="res://assets/songs/huh.mp3" id="12_xio0d"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_s4pem"]
 bg_color = Color(0.476543, 0.150106, 0.137225, 1)
@@ -37,7 +37,7 @@ mouse_filter = 2
 theme = ExtResource("1_mu8pm")
 script = ExtResource("1_uhj5c")
 level_preview_scene = ExtResource("3_omy8q")
-bgm = ExtResource("12_xio0d")
+bgm = ExtResource("4_tf5ef")
 
 [node name="Title" type="TextureRect" parent="."]
 layout_mode = 1

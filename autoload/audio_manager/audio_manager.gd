@@ -10,7 +10,7 @@ var background_music: AudioStreamPlayer
 
 func _ready() -> void:
 	process_mode = Node.PROCESS_MODE_ALWAYS
-	if initial_bgm: play_background_music(initial_bgm)
+	if initial_bgm: play_background_music(initial_bgm, -10.0)
 
 func play_background_music(stream: AudioStream, volume: float = 0.0) -> void:
 	if not stream: return
