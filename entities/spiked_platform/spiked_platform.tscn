@@ -13,8 +13,6 @@ size = Vector2(72, 72)
 
 [node name="SpikedPlatform" type="StaticBody2D"]
 script = ExtResource("1_w1iet")
-in_count_down = null
-platform_index = null
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_sh2c7")
