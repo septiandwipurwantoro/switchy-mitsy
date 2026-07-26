@@ -25,17 +25,17 @@ func _ready() -> void:
 func _on_count_down_over() -> void:
 	var appeared_turn := appeared_count % platform_group_total
 	for platform in platforms.get_children():
-		if platform is Platform:
+		if platform is Platform or Spike:
 			platform.update_existence(appeared_turn, platform_group_total)
-			gui.update_count_down_color(appeared_turn, platform_group_total)
+			
+		gui.update_count_down_color(appeared_turn, platform_group_total)
 			
 	appeared_count += 1
 
 func _on_player_hit() -> void:
 	GameState.count_down_enabled = false
 	for platform in platforms.get_children():
-		if platform is Platform:
-			platform.disable.call_deferred()
+		platform.disable.call_deferred()
 			
 	player.get_hit()
 

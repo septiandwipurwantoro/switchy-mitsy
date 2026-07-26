@@ -19,7 +19,19 @@ in_count_down = false
 size = Vector2(1280, 48)
 
 [node name="Spike" parent="Platforms" instance=ExtResource("2_5722l")]
-position = Vector2(735, 503)
+position = Vector2(732, 488)
+
+[node name="Spike2" parent="Platforms" instance=ExtResource("2_5722l")]
+position = Vector2(830, 489)
+spike_index = 1
+
+[node name="Spike3" parent="Platforms" instance=ExtResource("2_5722l")]
+position = Vector2(921, 489)
+spike_index = 2
+
+[node name="Spike4" parent="Platforms" instance=ExtResource("2_5722l")]
+position = Vector2(1022, 487)
+in_count_down = false
 
 [node name="Player" parent="." instance=ExtResource("2_v5uil")]
 position = Vector2(280, 522)
