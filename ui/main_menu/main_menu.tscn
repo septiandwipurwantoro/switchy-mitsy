@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://cyukwkdl3cngs"]
+[gd_scene load_steps=15 format=3 uid="uid://cyukwkdl3cngs"]
 
 [ext_resource type="Theme" uid="uid://yrd8ppbd4ny7" path="res://resources/default_theme.tres" id="1_mu8pm"]
 [ext_resource type="Script" uid="uid://cbwt6whiu142j" path="res://ui/main_menu/main_menu.gd" id="1_uhj5c"]
@@ -11,6 +11,7 @@
 [ext_resource type="Shader" uid="uid://hcksq2xvbywy" path="res://resources/platform.gdshader" id="9_qao3l"]
 [ext_resource type="Texture2D" uid="uid://dmtyicl2qmxkh" path="res://assets/backdrop/cloud.png" id="10_lknku"]
 [ext_resource type="Texture2D" uid="uid://cah5vl83dcehb" path="res://assets/gmtk.png" id="11_s4pem"]
+[ext_resource type="AudioStream" uid="uid://bfclb5ranrs43" path="res://assets/songs/huh.mp3" id="12_xio0d"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_s4pem"]
 bg_color = Color(0.476543, 0.150106, 0.137225, 1)
@@ -35,6 +36,7 @@ mouse_filter = 2
 theme = ExtResource("1_mu8pm")
 script = ExtResource("1_uhj5c")
 level_preview_scene = ExtResource("3_omy8q")
+bgm = ExtResource("12_xio0d")
 
 [node name="Title" type="TextureRect" parent="."]
 layout_mode = 1
@@ -114,7 +116,7 @@ theme_override_font_sizes/normal_font_size = 46
 theme_override_styles/normal = SubResource("StyleBoxFlat_s4pem")
 bbcode_enabled = true
 text = "[wave]Lenny : Artist, Level Designer
-Mungkidi : Programmer, Director
+Mungkidi : Programmer
 Mishikis : Composer, SFX Artist[/wave]"
 fit_content = true
 horizontal_alignment = 1

@@ -1,5 +1,6 @@
 extends Node
 
+signal count_down_start
 signal count_down_over
 
 const COUNT_DOWN_RANGE := Vector2(5.0, 10.0)
@@ -33,5 +34,7 @@ func start_count_down(cycle_size: int) -> void:
 	
 	count_cycle_size = cycle_size
 	count_down_enabled = true
+	
+	count_down_start.emit()
 	
 func end_count_down() -> void: count_down_enabled = false

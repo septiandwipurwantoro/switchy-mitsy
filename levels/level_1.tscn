@@ -17,7 +17,7 @@ spacing_glyph = 3
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_4e0le"]
 size = Vector2(480, 88)
 
-[node name="Level_1_gm" type="Node2D"]
+[node name="Level1" type="Node2D"]
 script = ExtResource("1_iey7c")
 
 [node name="Platform_wood" type="Node2D" parent="."]
@@ -192,6 +192,7 @@ size = Vector2(500, 50)
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="GUI" parent="CanvasLayer" instance=ExtResource("4_iey7c")]
+process_mode = 0
 
 [node name="DeadArea" type="Area2D" parent="."]
 position = Vector2(0, 893)

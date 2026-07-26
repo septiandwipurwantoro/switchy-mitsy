@@ -15,7 +15,7 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_glpk1"]
 size = Vector2(480, 88)
 
-[node name="Level_template" type="Node2D"]
+[node name="Level4" type="Node2D"]
 script = ExtResource("1_pnbff")
 platform_group_total = 6
 
@@ -140,6 +140,34 @@ offset_left = 1904.0
 offset_top = 112.0
 offset_right = 2256.0
 offset_bottom = 176.0
+texture = ExtResource("2_rsqyx")
+patch_margin_left = 32
+patch_margin_top = 32
+patch_margin_right = 32
+patch_margin_bottom = 32
+axis_stretch_horizontal = 1
+axis_stretch_vertical = 1
+
+[node name="NinePatchRect13" type="NinePatchRect" parent="Platform_wood"]
+modulate = Color(0.52549, 0.278431, 0.294118, 1)
+offset_left = 1536.0
+offset_top = 176.0
+offset_right = 1680.0
+offset_bottom = 576.0
+texture = ExtResource("2_rsqyx")
+patch_margin_left = 32
+patch_margin_top = 32
+patch_margin_right = 32
+patch_margin_bottom = 32
+axis_stretch_horizontal = 1
+axis_stretch_vertical = 1
+
+[node name="NinePatchRect14" type="NinePatchRect" parent="Platform_wood"]
+modulate = Color(0.52549, 0.278431, 0.294118, 1)
+offset_left = 1664.0
+offset_top = 176.0
+offset_right = 1744.0
+offset_bottom = 336.0
 texture = ExtResource("2_rsqyx")
 patch_margin_left = 32
 patch_margin_top = 32

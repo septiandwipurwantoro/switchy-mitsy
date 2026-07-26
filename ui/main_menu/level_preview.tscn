@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://b2tlbjnvd3cqh"]
 
 [ext_resource type="Script" uid="uid://ck4rubb28llu7" path="res://ui/main_menu/level_preview.gd" id="1_b8lv8"]
-[ext_resource type="Texture2D" uid="uid://cr03ewfc4euds" path="res://icon.svg" id="1_r657o"]
+[ext_resource type="Texture2D" uid="uid://2i5ta6dn3krl" path="res://icon.svg" id="1_r657o"]
 
 [node name="LevelPreview" type="PanelContainer"]
 theme_type_variation = &"SecondaryPanelContainer"
@@ -15,10 +15,6 @@ custom_minimum_size = Vector2(240, 120)
 layout_mode = 2
 texture = ExtResource("1_r657o")
 expand_mode = 1
-
-[node name="RichTextLabel" type="RichTextLabel" parent="VBoxContainer"]
-custom_minimum_size = Vector2(0, 64)
-layout_mode = 2
 
 [node name="PlayButton" type="Button" parent="VBoxContainer"]
 layout_mode = 2

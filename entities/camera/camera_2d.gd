@@ -27,7 +27,7 @@ func _process(delta: float) -> void:
 	global_position.x = target.global_position.x
 	if not target.is_jumping and not target.is_wall_sliding:
 		var viewport_size_y = get_viewport().get_visible_rect().size.y
-		global_position.y = lerp(global_position.y, viewport_size_y, 0.1)
+		global_position.y = lerp(global_position.y, viewport_size_y, 0.025)
 	else: global_position.y = lerp(global_position.y, target.global_position.y, 0.1)
 	
 func _shake_camera() -> void:
