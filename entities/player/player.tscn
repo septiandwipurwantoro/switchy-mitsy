@@ -169,6 +169,141 @@ tracks/12/keys = {
 "values": [false]
 }
 
+[sub_resource type="Animation" id="Animation_fkugw"]
+resource_name = "dead"
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("PlayerSprites/BodyYellow:position:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(-4, -0.25, 0, 0.25, 0, 3.47646, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 0.64)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("PlayerSprites/BodyYellow:position:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(30, -0.25, 0, 0.25, 0, 34.7646, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 0.64)
+}
+tracks/2/type = "bezier"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("PlayerSprites/BodyYellow:rotation")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0, 0.0545619, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 0.64)
+}
+tracks/3/type = "bezier"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("PlayerSprites/HeadYellow:position:x")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(-15, -0.25, 0, 0.25, 0, -6.95292, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 0.64)
+}
+tracks/4/type = "bezier"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("PlayerSprites/HeadYellow:position:y")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(-37, -0.25, 0, 0.25, 0, -31.2881, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 0.64)
+}
+tracks/5/type = "bezier"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("PlayerSprites/HeadYellow:rotation")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(-0.881173, -0.25, 0, 0.25, 0, -0.622462, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 0.64)
+}
+tracks/6/type = "bezier"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("PlayerSprites/ShoeYellow2:position:x")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(66.0527, -0.25, 0, 0.25, 0, 62.5763, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 0.64)
+}
+tracks/7/type = "bezier"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("PlayerSprites/ShoeYellow2:position:y")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(34.7646, -0.25, 0, 0.25, 0, 52.1469, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 0.64)
+}
+tracks/8/type = "bezier"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("PlayerSprites/ShoeYellow2:rotation")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(-1.10674, -0.25, 0, 0.25, 0, -0.822962, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 0.64)
+}
+tracks/9/type = "bezier"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("PlayerSprites/ShoeYellow:position:x")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(-83.435, -0.25, 0, 0.25, 0, -52.1469, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 0.64)
+}
+tracks/10/type = "bezier"
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/path = NodePath("PlayerSprites/ShoeYellow:position:y")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(45.194, -0.25, 0, 0.25, 0, 59.0998, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 0.64)
+}
+tracks/11/type = "bezier"
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/path = NodePath("PlayerSprites/ShoeYellow:rotation")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(0.954116, -0.25, 0, 0.25, 0, 0.69725, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 0.64)
+}
+
 [sub_resource type="Animation" id="Animation_8fjmc"]
 resource_name = "idle"
 length = 3.0
@@ -759,141 +894,6 @@ tracks/12/keys = {
 "handle_modes": PackedInt32Array(0),
 "points": PackedFloat32Array(-1.5708, -0.25, 0, 0.25, 0),
 "times": PackedFloat32Array(0)
-}
-
-[sub_resource type="Animation" id="Animation_fkugw"]
-resource_name = "dead"
-tracks/0/type = "bezier"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("PlayerSprites/BodyYellow:position:x")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"handle_modes": PackedInt32Array(0, 0),
-"points": PackedFloat32Array(-4, -0.25, 0, 0.25, 0, 3.47646, -0.25, 0, 0.25, 0),
-"times": PackedFloat32Array(0, 0.64)
-}
-tracks/1/type = "bezier"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("PlayerSprites/BodyYellow:position:y")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"handle_modes": PackedInt32Array(0, 0),
-"points": PackedFloat32Array(30, -0.25, 0, 0.25, 0, 34.7646, -0.25, 0, 0.25, 0),
-"times": PackedFloat32Array(0, 0.64)
-}
-tracks/2/type = "bezier"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("PlayerSprites/BodyYellow:rotation")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"handle_modes": PackedInt32Array(0, 0),
-"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0, 0.0545619, -0.25, 0, 0.25, 0),
-"times": PackedFloat32Array(0, 0.64)
-}
-tracks/3/type = "bezier"
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/path = NodePath("PlayerSprites/HeadYellow:position:x")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/keys = {
-"handle_modes": PackedInt32Array(0, 0),
-"points": PackedFloat32Array(-15, -0.25, 0, 0.25, 0, -6.95292, -0.25, 0, 0.25, 0),
-"times": PackedFloat32Array(0, 0.64)
-}
-tracks/4/type = "bezier"
-tracks/4/imported = false
-tracks/4/enabled = true
-tracks/4/path = NodePath("PlayerSprites/HeadYellow:position:y")
-tracks/4/interp = 1
-tracks/4/loop_wrap = true
-tracks/4/keys = {
-"handle_modes": PackedInt32Array(0, 0),
-"points": PackedFloat32Array(-37, -0.25, 0, 0.25, 0, -31.2881, -0.25, 0, 0.25, 0),
-"times": PackedFloat32Array(0, 0.64)
-}
-tracks/5/type = "bezier"
-tracks/5/imported = false
-tracks/5/enabled = true
-tracks/5/path = NodePath("PlayerSprites/HeadYellow:rotation")
-tracks/5/interp = 1
-tracks/5/loop_wrap = true
-tracks/5/keys = {
-"handle_modes": PackedInt32Array(0, 0),
-"points": PackedFloat32Array(-0.881173, -0.25, 0, 0.25, 0, -0.622462, -0.25, 0, 0.25, 0),
-"times": PackedFloat32Array(0, 0.64)
-}
-tracks/6/type = "bezier"
-tracks/6/imported = false
-tracks/6/enabled = true
-tracks/6/path = NodePath("PlayerSprites/ShoeYellow2:position:x")
-tracks/6/interp = 1
-tracks/6/loop_wrap = true
-tracks/6/keys = {
-"handle_modes": PackedInt32Array(0, 0),
-"points": PackedFloat32Array(66.0527, -0.25, 0, 0.25, 0, 62.5763, -0.25, 0, 0.25, 0),
-"times": PackedFloat32Array(0, 0.64)
-}
-tracks/7/type = "bezier"
-tracks/7/imported = false
-tracks/7/enabled = true
-tracks/7/path = NodePath("PlayerSprites/ShoeYellow2:position:y")
-tracks/7/interp = 1
-tracks/7/loop_wrap = true
-tracks/7/keys = {
-"handle_modes": PackedInt32Array(0, 0),
-"points": PackedFloat32Array(34.7646, -0.25, 0, 0.25, 0, 52.1469, -0.25, 0, 0.25, 0),
-"times": PackedFloat32Array(0, 0.64)
-}
-tracks/8/type = "bezier"
-tracks/8/imported = false
-tracks/8/enabled = true
-tracks/8/path = NodePath("PlayerSprites/ShoeYellow2:rotation")
-tracks/8/interp = 1
-tracks/8/loop_wrap = true
-tracks/8/keys = {
-"handle_modes": PackedInt32Array(0, 0),
-"points": PackedFloat32Array(-1.10674, -0.25, 0, 0.25, 0, -0.822962, -0.25, 0, 0.25, 0),
-"times": PackedFloat32Array(0, 0.64)
-}
-tracks/9/type = "bezier"
-tracks/9/imported = false
-tracks/9/enabled = true
-tracks/9/path = NodePath("PlayerSprites/ShoeYellow:position:x")
-tracks/9/interp = 1
-tracks/9/loop_wrap = true
-tracks/9/keys = {
-"handle_modes": PackedInt32Array(0, 0),
-"points": PackedFloat32Array(-83.435, -0.25, 0, 0.25, 0, -52.1469, -0.25, 0, 0.25, 0),
-"times": PackedFloat32Array(0, 0.64)
-}
-tracks/10/type = "bezier"
-tracks/10/imported = false
-tracks/10/enabled = true
-tracks/10/path = NodePath("PlayerSprites/ShoeYellow:position:y")
-tracks/10/interp = 1
-tracks/10/loop_wrap = true
-tracks/10/keys = {
-"handle_modes": PackedInt32Array(0, 0),
-"points": PackedFloat32Array(45.194, -0.25, 0, 0.25, 0, 59.0998, -0.25, 0, 0.25, 0),
-"times": PackedFloat32Array(0, 0.64)
-}
-tracks/11/type = "bezier"
-tracks/11/imported = false
-tracks/11/enabled = true
-tracks/11/path = NodePath("PlayerSprites/ShoeYellow:rotation")
-tracks/11/interp = 1
-tracks/11/loop_wrap = true
-tracks/11/keys = {
-"handle_modes": PackedInt32Array(0, 0),
-"points": PackedFloat32Array(0.954116, -0.25, 0, 0.25, 0, 0.69725, -0.25, 0, 0.25, 0),
-"times": PackedFloat32Array(0, 0.64)
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_26q78"]

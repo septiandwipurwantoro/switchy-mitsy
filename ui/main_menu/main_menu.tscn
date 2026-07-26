@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://cyukwkdl3cngs"]
+[gd_scene load_steps=15 format=3 uid="uid://cyukwkdl3cngs"]
 
 [ext_resource type="Theme" uid="uid://yrd8ppbd4ny7" path="res://resources/default_theme.tres" id="1_mu8pm"]
 [ext_resource type="Script" uid="uid://cbwt6whiu142j" path="res://ui/main_menu/main_menu.gd" id="1_uhj5c"]
@@ -11,6 +11,7 @@
 [ext_resource type="Shader" uid="uid://hcksq2xvbywy" path="res://resources/platform.gdshader" id="9_qao3l"]
 [ext_resource type="Texture2D" uid="uid://dmtyicl2qmxkh" path="res://assets/backdrop/cloud.png" id="10_lknku"]
 [ext_resource type="Texture2D" uid="uid://cah5vl83dcehb" path="res://assets/gmtk.png" id="11_s4pem"]
+[ext_resource type="AudioStream" uid="uid://bfclb5ranrs43" path="res://assets/songs/huh.mp3" id="12_xio0d"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_s4pem"]
 bg_color = Color(0.476543, 0.150106, 0.137225, 1)
@@ -204,6 +205,10 @@ offset_bottom = 256.0
 scale = Vector2(2.56, 2.50781)
 texture = ExtResource("10_lknku")
 stretch_mode = 1
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("12_xio0d")
+autoplay = true
 
 [connection signal="button_up" from="MainMenuButtons/PlayButton" to="." method="_on_start_game_button_button_up"]
 [connection signal="button_up" from="MainMenuButtons/CreditButton" to="." method="_on_credit_button_button_up"]
