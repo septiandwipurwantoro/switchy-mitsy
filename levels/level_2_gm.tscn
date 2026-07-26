@@ -21,6 +21,7 @@ size = Vector2(480, 88)
 script = ExtResource("1_nn5sp")
 
 [node name="Platform_wood" type="Node2D" parent="."]
+modulate = Color(0.866667, 0.498039, 1, 1)
 
 [node name="NinePatchRect" type="NinePatchRect" parent="Platform_wood"]
 modulate = Color(0.321569, 0.156863, 0.168627, 1)
